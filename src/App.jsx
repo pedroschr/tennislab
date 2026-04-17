@@ -272,7 +272,7 @@ header{padding:14px 20px;border-bottom:1px solid rgba(140,220,80,.1);display:fle
 .input-field::placeholder{color:rgba(230,244,234,.28);}
 
 /* ── Push banner ── */
-.push-banner{background:linear-gradient(90deg,rgba(168,216,64,.08),rgba(0,174,239,.06));border-bottom:1px solid rgba(168,216,64,.12);padding:10px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;font-size:13px;}
+.push-banner{background:linear-gradient(90deg,rgba(168,216,64,.1),rgba(0,174,239,.07));border-bottom:1px solid rgba(168,216,64,.15);padding:10px 20px;display:flex;align-items:center;gap:12px;font-size:13px;min-height:48px;}
 .push-actions{display:flex;gap:8px;margin-left:auto;}
 
 /* ── Modal ── */
@@ -280,7 +280,7 @@ header{padding:14px 20px;border-bottom:1px solid rgba(140,220,80,.1);display:fle
 .modal-box{background:#0e1a11;border:1px solid rgba(140,220,80,.25);border-radius:18px 18px 0 0;padding:28px 20px;width:100%;max-width:500px;animation:slideUp .35s ease;max-height:92vh;overflow-y:auto;}
 
 /* ── Chat fab ── */
-.chat-fab{position:fixed;bottom:20px;right:16px;z-index:400;width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#a8d840,#7db800);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 4px 20px rgba(168,216,64,.35);transition:transform .2s;}
+.chat-fab{position:fixed;bottom:20px;right:16px;z-index:400;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#a8d840,#7db800);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 4px 24px rgba(168,216,64,.45),0 2px 8px rgba(0,0,0,.3);transition:transform .2s;}
 
 /* ── Chat window ── */
 .chat-window{position:fixed;bottom:80px;right:0;left:0;z-index:400;background:#0e1a11;border:1px solid rgba(140,220,80,.25);border-radius:16px 16px 0 0;overflow:hidden;animation:chatPop .3s ease;box-shadow:0 -8px 40px rgba(0,0,0,.6);}
@@ -440,10 +440,10 @@ export default function TennisLab() {
       <div style={{ position:"relative", zIndex:1 }}>
         {!pushDone && <PushBanner onDone={()=>setPushDone(true)}/>}
         <header>
-          <div style={{ display:"flex", alignItems:"center", gap:12 }}>
-            <span style={{ fontSize:22 }}>🎾</span>
+          <div style={{ display:"flex", alignItems:"center", gap:14 }}>
+            <span style={{ fontSize:26, lineHeight:1 }}>🎾</span>
             <div>
-              <div style={{ fontFamily:"'Anton',sans-serif", fontSize:19, letterSpacing:3, color:"#a8d840" }}>TENNISLAB</div>
+              <div style={{ fontFamily:"'Anton',sans-serif", fontSize:20, letterSpacing:3, color:"#a8d840", lineHeight:1.1 }}>TENNISLAB</div>
               <div className="header-subtitle">COMPARE RAQUETES · CORDAS · BOLAS · TÊNIS DE COURT</div>
             </div>
           </div>
@@ -480,7 +480,7 @@ const FAQ_DATA = [
 function HomeStep({ onSingle, onKit }) {
   const [faqOpen, setFaqOpen] = useState(null);
   return (
-    <div style={{ maxWidth:900, margin:"0 auto", padding:"32px 16px" }} className="fade-in">
+    <div style={{ maxWidth:900, margin:"0 auto", padding:"40px 16px 32px" }} className="fade-in">
 
       {/* ── HERO ── */}
       <div style={{ textAlign:"center", marginBottom:52 }}>
@@ -499,11 +499,11 @@ function HomeStep({ onSingle, onKit }) {
             <span key={b} style={{ background:"rgba(255,255,255,.04)", border:"1px solid rgba(255,255,255,.09)", borderRadius:20, padding:"4px 14px", fontSize:12, color:"rgba(230,244,234,.5)", fontWeight:600 }}>{b}</span>
           ))}
         </div>
-        <p style={{ fontSize:12, color:"rgba(230,244,234,.28)" }}>+30 modelos avaliados pelo time TennisLab · Wilson · Babolat · Head · Yonex · Asics · Nike · Adidas</p>
+        <p style={{ fontSize:12, color:"rgba(230,244,234,.28)", marginTop:6 }}>+30 modelos avaliados pelo time TennisLab · Wilson · Babolat · Head · Yonex · Asics · Nike · Adidas</p>
       </div>
       {/* ── MODO DE BUSCA ── */}
-      <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))", gap:14, marginBottom:48 }}>
-        <div onClick={onKit} style={{ cursor:"pointer", background:"linear-gradient(135deg,rgba(168,216,64,.09),rgba(64,200,216,.05))", border:"2px solid rgba(168,216,64,.32)", borderRadius:18, padding:30, transition:"all .22s" }}
+      <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))", gap:14, marginBottom:48, alignItems:"stretch" }}>
+        <div onClick={onKit} style={{ cursor:"pointer", background:"linear-gradient(135deg,rgba(168,216,64,.09),rgba(64,200,216,.05))", border:"2px solid rgba(168,216,64,.32)", borderRadius:18, padding:30, transition:"all .22s", display:"flex", flexDirection:"column", boxSizing:"border-box" }}
           onMouseEnter={e=>{ e.currentTarget.style.transform="translateY(-4px)"; e.currentTarget.style.boxShadow="0 14px 42px rgba(168,216,64,.13)"; }}
           onMouseLeave={e=>{ e.currentTarget.style.transform=""; e.currentTarget.style.boxShadow=""; }}>
           <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start", marginBottom:12 }}>
@@ -518,7 +518,7 @@ function HomeStep({ onSingle, onKit }) {
             {CATS.map(c=><span key={c.id} style={{ background:"rgba(255,255,255,.05)", border:"1px solid rgba(255,255,255,.09)", borderRadius:20, padding:"2px 10px", fontSize:11, color:"rgba(230,244,234,.45)" }}>{c.icon} {c.label}</span>)}
           </div>
         </div>
-        <div onClick={onSingle} style={{ cursor:"pointer", background:"rgba(255,255,255,.022)", border:"1px solid rgba(255,255,255,.07)", borderRadius:18, padding:30, transition:"all .22s" }}
+        <div onClick={onSingle} style={{ cursor:"pointer", background:"rgba(255,255,255,.022)", border:"1px solid rgba(255,255,255,.07)", borderRadius:18, padding:30, transition:"all .22s", display:"flex", flexDirection:"column", boxSizing:"border-box" }}
           onMouseEnter={e=>{ e.currentTarget.style.background="rgba(255,255,255,.04)"; e.currentTarget.style.transform="translateY(-4px)"; }}
           onMouseLeave={e=>{ e.currentTarget.style.background="rgba(255,255,255,.022)"; e.currentTarget.style.transform=""; }}>
           <span style={{ fontSize:38, display:"block", marginBottom:12 }}>🔍</span>
@@ -959,10 +959,11 @@ function PushBanner({ onDone }) {
   if(st==="denied") return <div className="push-banner"><span style={{ fontSize:13,color:"rgba(230,244,234,.32)" }}>Notificações bloqueadas.</span></div>;
   return (
     <div className="push-banner">
-      <span>📲</span><span style={{ fontSize:13, display:"block", textAlign:"center", width:"100%" }}>📲 Receba alertas de promoções de tênis!</span>
-      <div className="push-actions">
-        <button className="btn-green" style={{ padding:"9px 16px",fontSize:12,minHeight:40 }} onClick={req}>{st==="loading"?"...":"Ativar"}</button>
-        <button className="btn-ghost" style={{ padding:"9px 12px",fontSize:12,minHeight:40 }} onClick={onDone}>Agora não</button>
+      <span style={{ fontSize:15 }}>📲</span>
+      <span style={{ fontSize:13, flex:1 }}>Receba alertas de promoções e ofertas de tênis!</span>
+      <div style={{ display:"flex", gap:8, flexShrink:0 }}>
+        <button className="btn-green" style={{ padding:"8px 16px",fontSize:12,minHeight:38 }} onClick={req}>{st==="loading"?"...":"Ativar"}</button>
+        <button className="btn-ghost" style={{ padding:"8px 12px",fontSize:12,minHeight:38 }} onClick={onDone}>Agora não</button>
       </div>
     </div>
   );
@@ -1031,7 +1032,7 @@ function ChatWidget({ open, onToggle }) {
           </div>
         </div>
       )}
-      <button className="chat-fab" onClick={onToggle}>{open?"✕":"🎾"}</button>
+      <button className="chat-fab" onClick={onToggle} title="Fale com o time especialista">{open?"✕":"🎾"}</button>
     </>
   );
 }
