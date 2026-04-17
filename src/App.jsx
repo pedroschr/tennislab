@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 /* ══════════════════════════════════════════════════════════════════
    SEO — Meta tags, Schema.org JSON-LD, Open Graph
    Palavras-chave: melhor raquete de tênis, comparador de raquetes,
-   equipamentos de tênis, kit de tênis, corda de tênis, tênis de court
+   equipamentos de tênis, kit de tênis, corda de tênis, calçado para tênis
 ══════════════════════════════════════════════════════════════════ */
 function useSEO(step, cat) {
   useEffect(() => {
@@ -14,15 +14,15 @@ function useSEO(step, cat) {
       corda:   "Melhor Corda de Tênis 2025 | Luxilon, Babolat RPM, Wilson NXT – TennisLab",
       bola:    "Melhor Bola de Tênis 2025 | Wilson US Open, Penn ATP – TennisLab",
       raqueteira:"Melhor Raqueteira de Tênis 2025 | Head, Wilson, Tecnifibre – TennisLab",
-      tenis:   "Melhor Tênis para Jogar Tênis 2025 | Asics, Nike, Adidas – TennisLab",
+      tenis:   "Melhor Calçado para Tênis 2025 | Asics, Nike, Adidas – TennisLab",
     };
     const descs = {
-      0: "Compare raquetes, cordas, bolas, raqueteiras e tênis de court. Produtos avaliados pelo nosso time especialista em tênis. Veja preços na Amazon, Netshoes e Centauro.",
+      0: "Compare raquetes, cordas, bolas, raqueteiras e calçados para tênis. Produtos avaliados pelo nosso time especialista. Veja preços na Amazon, Netshoes e Centauro.",
       raquete: "Qual a melhor raquete de tênis para você? Compare Wilson Clash, Babolat Pure Aero, Head Speed e mais. Análise técnica por nível e estilo de jogo.",
       corda:   "Qual a melhor corda de tênis? Compare Babolat RPM Blast, Luxilon ALU Power, Wilson NXT. Dicas de tensão e tipo de jogo.",
       bola:    "Compare as melhores bolas de tênis: Wilson US Open, Penn ATP, Babolat Gold. Veja qual é ideal para saibro, quadra dura ou indoor.",
       raqueteira:"Compare raqueteiras de tênis Head, Wilson e Tecnifibre. Veja capacidade, bolsos térmicos e preços nas principais lojas.",
-      tenis:   "Qual o melhor tênis para jogar tênis? Compare Asics Gel-Resolution, Nike Air Zoom Vapor, Adidas Barricade. Análise por tipo de quadra.",
+      tenis:   "Qual o melhor tênis para praticar tênis? Compare Asics Gel-Resolution, Nike Air Zoom Vapor, Adidas Barricade. Análise por tipo de quadra.",
     };
     const key = step === 0 ? 0 : (cat || 0);
     document.title = titles[key] || titles[0];
@@ -53,10 +53,10 @@ function useSEO(step, cat) {
           "mainEntity": [
             { "@type": "Question", "name": "Qual a melhor raquete de tênis para iniciante?", "acceptedAnswer": { "@type": "Answer", "text": "Para iniciantes, recomendamos raquetes leves com cabeça grande (110–115 polegadas) como a Head Ti.S6 (232g) ou Wilson Hyper Hammer 5.3. Elas oferecem mais potência com menos esforço e perdoam erros de timing." } },
             { "@type": "Question", "name": "Qual a melhor corda de tênis para spin?", "acceptedAnswer": { "@type": "Answer", "text": "A Babolat RPM Blast 1.25mm é a referência mundial para spin, usada por Rafael Nadal. Para quem busca mais conforto com bom spin, a Head Hawk Touch é uma excelente alternativa." } },
-            { "@type": "Question", "name": "Qual tênis usar para jogar tênis no saibro?", "acceptedAnswer": { "@type": "Answer", "text": "Para saibro (terra batida), o Asics Gel-Resolution 9 é a referência do mercado, com sola Herringbone para aderência. O Babolat Jet Mach 3 com sola Michelin também é muito popular." } },
+            { "@type": "Question", "name": "Qual calçado usar para jogar tênis no saibro?", "acceptedAnswer": { "@type": "Answer", "text": "Para saibro (terra batida), o Asics Gel-Resolution 9 é a referência do mercado, com sola Herringbone para aderência. O Babolat Jet Mach 3 com sola Michelin também é muito popular." } },
             { "@type": "Question", "name": "Qual a tensão ideal para encordoar uma raquete de tênis?", "acceptedAnswer": { "@type": "Answer", "text": "A tensão ideal depende do nível e estilo de jogo. Iniciantes e jogadores de controle usam tensões mais baixas (48–52 lbs), enquanto jogadores agressivos preferem 54–58 lbs. Cordas co-poly devem ser encordoadas mais baixas (48–54 lbs)." } },
             { "@type": "Question", "name": "Qual a diferença entre raquete head-heavy e head-light?", "acceptedAnswer": { "@type": "Answer", "text": "Raquetes head-heavy têm mais peso na cabeça, gerando mais potência — ideais para iniciantes e jogadores de fundo. Raquetes head-light têm o peso concentrado no cabo, oferecendo mais controle e velocidade de swing — preferidas por jogadores avançados." } },
-            { "@type": "Question", "name": "Onde comprar raquete de tênis com bom preço?", "acceptedAnswer": { "@type": "Answer", "text": "As melhores lojas para comprar raquetes de tênis no Brasil são Amazon, Netshoes, Centauro e Tennis Point. Compare os preços em todas elas no TennisLab antes de decidir." } }
+            { "@type": "Question", "name": "Onde comprar equipamentos de tênis com o melhor preço?", "acceptedAnswer": { "@type": "Answer", "text": "As melhores lojas para comprar equipamentos de tênis no Brasil são Amazon, Netshoes, Centauro e Tennis Point. Compare os preços em todas elas no TennisLab antes de decidir." } }
           ]
         }
       ]
@@ -72,64 +72,64 @@ function useSEO(step, cat) {
 const DB = {
   raquete: [
     // ── INICIANTE ──
-    { id:"head-ti-s6",        marca:"Head",     produto:"Ti.S6",              nivel:"iniciante",    estilo:["baseline","defensivo","polivalente"], peso:"232g", balanco:"head-heavy", padrao:"oversize 115 pol.", preco_brl:"R$ 280–R$ 420",   busca:"Head Ti S6 raquete tênis",   pontos_spin:2, pontos_controle:3, pontos_potencia:5, descricao:"Raquete leve e com cabeça grande, ideal para iniciantes que precisam de potência sem muito esforço físico." },
-    { id:"babolat-boost-d",   marca:"Babolat",  produto:"Boost Drive",        nivel:"iniciante",    estilo:["baseline","polivalente"],             peso:"270g", balanco:"head-heavy", padrao:"midplus 105 pol.",  preco_brl:"R$ 380–R$ 550",   busca:"Babolat Boost Drive raquete", pontos_spin:3, pontos_controle:3, pontos_potencia:4, descricao:"Confortável, forgiving e potente. Ótima para mulheres e jogadores que buscam praticidade no início." },
-    { id:"wilson-hyper-h5",   marca:"Wilson",   produto:"Hyper Hammer 5.3",   nivel:"iniciante",    estilo:["baseline","defensivo"],               peso:"248g", balanco:"head-heavy", padrao:"oversize 110 pol.", preco_brl:"R$ 250–R$ 380",   busca:"Wilson Hyper Hammer 5.3 review", pontos_spin:2, pontos_controle:3, pontos_potencia:5, descricao:"Clássica de treino, frame leve e cabeça grande para máxima zona de conforto." },
+    { id:"head-ti-s6",        marca:"Head",     produto:"Ti.S6",              nivel:"iniciante",    estilo:["baseline","defensivo","polivalente"], peso:"232g", balanco:"head-heavy", padrao:"oversize 115 pol.", preco_brl:"R$ 280–R$ 420",   busca:"Head Ti.S6 raquete tênis adulto",   pontos_spin:2, pontos_controle:3, pontos_potencia:5, descricao:"Raquete leve e com cabeça grande, ideal para iniciantes que precisam de potência sem muito esforço físico." },
+    { id:"babolat-boost-d",   marca:"Babolat",  produto:"Boost Drive",        nivel:"iniciante",    estilo:["baseline","polivalente"],             peso:"270g", balanco:"head-heavy", padrao:"midplus 105 pol.",  preco_brl:"R$ 380–R$ 550",   busca:"Babolat Boost Drive raquete tênis", pontos_spin:3, pontos_controle:3, pontos_potencia:4, descricao:"Confortável, forgiving e potente. Ótima para mulheres e jogadores que buscam praticidade no início." },
+    { id:"wilson-hyper-h5",   marca:"Wilson",   produto:"Hyper Hammer 5.3",   nivel:"iniciante",    estilo:["baseline","defensivo"],               peso:"248g", balanco:"head-heavy", padrao:"oversize 110 pol.", preco_brl:"R$ 250–R$ 380",   busca:"Wilson Hyper Hammer 5.3 raquete", pontos_spin:2, pontos_controle:3, pontos_potencia:5, descricao:"Clássica de treino, frame leve e cabeça grande para máxima zona de conforto." },
     // ── INTERMEDIÁRIO ──
-    { id:"wilson-clash-100",  marca:"Wilson",   produto:"Clash 100 v2",       nivel:"intermediario",estilo:["baseline","polivalente"],             peso:"295g", balanco:"even",       padrao:"midplus 100 pol.",  preco_brl:"R$ 1.100–R$ 1.600",busca:"Wilson Clash 100 v2 review",  pontos_spin:4, pontos_controle:5, pontos_potencia:4, descricao:"Tecnologia FreeFlex proporciona controle e conforto excepcionais. Excelente para quem está evoluindo o jogo de fundo de quadra." },
-    { id:"head-speed-mp",     marca:"Head",     produto:"Speed MP 2024",      nivel:"intermediario",estilo:["polivalente","saque-voleio"],          peso:"300g", balanco:"even",       padrao:"midplus 100 pol.",  preco_brl:"R$ 1.200–R$ 1.800",busca:"Head Speed MP 2024 review",   pontos_spin:4, pontos_controle:4, pontos_potencia:4, descricao:"A raquete do Zverev. Versátil, rápida e equilibrada. Perfeita para quem quer atacar e defender bem." },
-    { id:"babolat-pure-drive-lite", marca:"Babolat", produto:"Pure Drive Lite",nivel:"intermediario",estilo:["baseline","polivalente"],           peso:"270g", balanco:"slight-head-heavy", padrao:"midplus 100 pol.", preco_brl:"R$ 950–R$ 1.400", busca:"Babolat Pure Drive Lite review", pontos_spin:4, pontos_controle:3, pontos_potencia:5, descricao:"Versão mais leve da icônica Pure Drive. Máxima potência e spin para jogadores em evolução." },
-    { id:"head-radical-mp",   marca:"Head",     produto:"Radical MP 2023",    nivel:"intermediario",estilo:["baseline","defensivo"],               peso:"295g", balanco:"even",       padrao:"midplus 98 pol.",   preco_brl:"R$ 1.100–R$ 1.600",busca:"Head Radical MP 2023 review",  pontos_spin:4, pontos_controle:5, pontos_potencia:3, descricao:"A raquete do Andy Murray. Precisão cirúrgica e controle sem abrir mão do spin." },
+    { id:"wilson-clash-100",  marca:"Wilson",   produto:"Clash 100 v2",       nivel:"intermediario",estilo:["baseline","polivalente"],             peso:"295g", balanco:"even",       padrao:"midplus 100 pol.",  preco_brl:"R$ 1.100–R$ 1.600",busca:"Wilson Clash 100 v2 raquete", links:{ amazon:"https://www.amazon.com.br/dp/B09RGCLH3M", centauro:"https://www.centauro.com.br/raquete-de-tenis-wilson-clash-100-v2-adulto-972482.html" },  pontos_spin:4, pontos_controle:5, pontos_potencia:4, descricao:"Tecnologia FreeFlex proporciona controle e conforto excepcionais. Excelente para quem está evoluindo o jogo de fundo de quadra." },
+    { id:"head-speed-mp",     marca:"Head",     produto:"Speed MP 2024",      nivel:"intermediario",estilo:["polivalente","saque-voleio"],          peso:"300g", balanco:"even",       padrao:"midplus 100 pol.",  preco_brl:"R$ 1.200–R$ 1.800",busca:"Head Speed MP 2024 raquete tênis",   pontos_spin:4, pontos_controle:4, pontos_potencia:4, descricao:"A raquete do Zverev. Versátil, rápida e equilibrada. Perfeita para quem quer atacar e defender bem." },
+    { id:"babolat-pure-drive-lite", marca:"Babolat", produto:"Pure Drive Lite",nivel:"intermediario",estilo:["baseline","polivalente"],           peso:"270g", balanco:"slight-head-heavy", padrao:"midplus 100 pol.", preco_brl:"R$ 950–R$ 1.400", busca:"Babolat Pure Drive Lite raquete tênis", pontos_spin:4, pontos_controle:3, pontos_potencia:5, descricao:"Versão mais leve da icônica Pure Drive. Máxima potência e spin para jogadores em evolução." },
+    { id:"head-radical-mp",   marca:"Head",     produto:"Radical MP 2023",    nivel:"intermediario",estilo:["baseline","defensivo"],               peso:"295g", balanco:"even",       padrao:"midplus 98 pol.",   preco_brl:"R$ 1.100–R$ 1.600",busca:"Head Radical MP 2023 raquete",  pontos_spin:4, pontos_controle:5, pontos_potencia:3, descricao:"A raquete do Andy Murray. Precisão cirúrgica e controle sem abrir mão do spin." },
     // ── AVANÇADO ──
-    { id:"babolat-pure-aero", marca:"Babolat",  produto:"Pure Aero 2023",     nivel:"avancado",     estilo:["baseline","polivalente"],             peso:"300g", balanco:"slight-head-heavy", padrao:"midplus 100 pol.", preco_brl:"R$ 1.800–R$ 2.500", busca:"Babolat Pure Aero 2023 review", pontos_spin:5, pontos_controle:4, pontos_potencia:4, descricao:"A arma do Nadal. Spin fenomenal com Aero Modular Technology. Referência para jogadores de fundo de quadra agressivos." },
-    { id:"wilson-pro-staff-97", marca:"Wilson", produto:"Pro Staff 97 v14",   nivel:"avancado",     estilo:["baseline","defensivo","polivalente"], peso:"315g", balanco:"head-light",  padrao:"midplus 97 pol.",   preco_brl:"R$ 2.000–R$ 2.800",busca:"Wilson Pro Staff 97 v14 review", pontos_spin:4, pontos_controle:5, pontos_potencia:3, descricao:"A lendária raquete do Federer (versão 97\"). Feeling incomparável, controle absoluto para jogadores avançados." },
-    { id:"head-prestige-mp",  marca:"Head",     produto:"Prestige MP 2023",   nivel:"avancado",     estilo:["baseline","defensivo"],               peso:"320g", balanco:"head-light",  padrao:"midplus 95 pol.",   preco_brl:"R$ 1.900–R$ 2.600",busca:"Head Prestige MP 2023 review",  pontos_spin:3, pontos_controle:5, pontos_potencia:3, descricao:"Para jogadores técnicos. Padrão fechado 95\" exige precisão mas recompensa com controle excepcional." },
-    { id:"yonex-ezone-98",    marca:"Yonex",    produto:"EZONE 98 2022",      nivel:"avancado",     estilo:["polivalente","saque-voleio"],          peso:"305g", balanco:"even",        padrao:"midplus 98 pol.",   preco_brl:"R$ 1.700–R$ 2.400",busca:"Yonex EZone 98 2022 review",   pontos_spin:4, pontos_controle:4, pontos_potencia:4, descricao:"Isometria exclusiva Yonex. Sweetspot maior em padrão 98\". Popular no tour asiático e entre jogadores versáteis." },
+    { id:"babolat-pure-aero", marca:"Babolat",  produto:"Pure Aero 2023",     nivel:"avancado",     estilo:["baseline","polivalente"],             peso:"300g", balanco:"slight-head-heavy", padrao:"midplus 100 pol.", preco_brl:"R$ 1.800–R$ 2.500", busca:"Babolat Pure Aero 2023 raquete", links:{ netshoes:"https://www.netshoes.com.br/p/raquete-de-tenis-babolat-pure-aero-2023-l2-preto-2DC-1090-006" }, pontos_spin:5, pontos_controle:4, pontos_potencia:4, descricao:"A arma do Nadal. Spin fenomenal com Aero Modular Technology. Referência para jogadores de fundo de quadra agressivos." },
+    { id:"wilson-pro-staff-97", marca:"Wilson", produto:"Pro Staff 97 v14",   nivel:"avancado",     estilo:["baseline","defensivo","polivalente"], peso:"315g", balanco:"head-light",  padrao:"midplus 97 pol.",   preco_brl:"R$ 2.000–R$ 2.800",busca:"Wilson Pro Staff 97 v14 raquete", pontos_spin:4, pontos_controle:5, pontos_potencia:3, descricao:"A lendária raquete do Federer (versão 97\"). Feeling incomparável, controle absoluto para jogadores avançados." },
+    { id:"head-prestige-mp",  marca:"Head",     produto:"Prestige MP 2023",   nivel:"avancado",     estilo:["baseline","defensivo"],               peso:"320g", balanco:"head-light",  padrao:"midplus 95 pol.",   preco_brl:"R$ 1.900–R$ 2.600",busca:"Head Prestige MP 2023 raquete",  pontos_spin:3, pontos_controle:5, pontos_potencia:3, descricao:"Para jogadores técnicos. Padrão fechado 95\" exige precisão mas recompensa com controle excepcional." },
+    { id:"yonex-ezone-98",    marca:"Yonex",    produto:"EZONE 98 2022",      nivel:"avancado",     estilo:["polivalente","saque-voleio"],          peso:"305g", balanco:"even",        padrao:"midplus 98 pol.",   preco_brl:"R$ 1.700–R$ 2.400",busca:"Yonex EZONE 98 raquete tênis",   pontos_spin:4, pontos_controle:4, pontos_potencia:4, descricao:"Isometria exclusiva Yonex. Sweetspot maior em padrão 98\". Popular no tour asiático e entre jogadores versáteis." },
     // ── PROFISSIONAL ──
-    { id:"wilson-pro-staff-rf97", marca:"Wilson", produto:"Pro Staff RF97 Autograph", nivel:"profissional", estilo:["baseline","defensivo"], peso:"340g", balanco:"head-light", padrao:"midplus 97 pol.", preco_brl:"R$ 3.200–R$ 4.500", busca:"Wilson Pro Staff RF97 review", pontos_spin:4, pontos_controle:5, pontos_potencia:3, descricao:"A raquete que o Federer usou por 20 anos. Peso alto (340g) exige técnica e condicionamento. Feeling inigualável." },
-    { id:"babolat-pure-strike-18-20", marca:"Babolat", produto:"Pure Strike 18×20", nivel:"profissional", estilo:["baseline","saque-voleio","polivalente"], peso:"305g", balanco:"even", padrao:"midplus 98 pol.", preco_brl:"R$ 2.800–R$ 3.800", busca:"Babolat Pure Strike 18x20 review", pontos_spin:3, pontos_controle:5, pontos_potencia:4, descricao:"Versão com padrão fechado 18×20. Precisão máxima para quem domina a técnica. Usada por Tsitsipas." },
+    { id:"wilson-pro-staff-rf97", marca:"Wilson", produto:"Pro Staff RF97 Autograph", nivel:"profissional", estilo:["baseline","defensivo"], peso:"340g", balanco:"head-light", padrao:"midplus 97 pol.", preco_brl:"R$ 3.200–R$ 4.500", busca:"Wilson Pro Staff RF97 Autograph raquete", pontos_spin:4, pontos_controle:5, pontos_potencia:3, descricao:"A raquete que o Federer usou por 20 anos. Peso alto (340g) exige técnica e condicionamento. Feeling inigualável." },
+    { id:"babolat-pure-strike-18-20", marca:"Babolat", produto:"Pure Strike 18×20", nivel:"profissional", estilo:["baseline","saque-voleio","polivalente"], peso:"305g", balanco:"even", padrao:"midplus 98 pol.", preco_brl:"R$ 2.800–R$ 3.800", busca:"Babolat Pure Strike 18x20 raquete", pontos_spin:3, pontos_controle:5, pontos_potencia:4, descricao:"Versão com padrão fechado 18×20. Precisão máxima para quem domina a técnica. Usada por Tsitsipas." },
   ],
 
   corda: [
     // ── INICIANTE ──
-    { id:"wilson-nxt-16",     marca:"Wilson",   produto:"NXT 16",             nivel:"iniciante",    estilo:["polivalente","defensivo","baseline"],  material:"multifilamento", espessura:"1.30mm", tensao_rec:"50-55 lbs", preco_brl:"R$ 45–R$ 70",    busca:"Wilson NXT 16 corda review",  pontos_spin:2, pontos_controle:4, pontos_conforto:5, descricao:"Multifilamento macia e confortável. Excelente absorção de vibração. Ideal para cotovelo de tenista." },
-    { id:"babolat-xcel-130",  marca:"Babolat",  produto:"Xcel 130",           nivel:"iniciante",    estilo:["polivalente","defensivo"],             material:"multifilamento", espessura:"1.30mm", tensao_rec:"48-54 lbs", preco_brl:"R$ 50–R$ 75",    busca:"Babolat Xcel 130 review",     pontos_spin:3, pontos_controle:3, pontos_conforto:5, descricao:"Corda de entrada confortável com boa durabilidade. Popular em academias e jogadores iniciantes." },
+    { id:"wilson-nxt-16",     marca:"Wilson",   produto:"NXT 16",             nivel:"iniciante",    estilo:["polivalente","defensivo","baseline"],  material:"multifilamento", espessura:"1.30mm", tensao_rec:"50-55 lbs", preco_brl:"R$ 45–R$ 70",    busca:"Wilson NXT 16 corda raquete tênis",  pontos_spin:2, pontos_controle:4, pontos_conforto:5, descricao:"Multifilamento macia e confortável. Excelente absorção de vibração. Ideal para cotovelo de tenista." },
+    { id:"babolat-xcel-130",  marca:"Babolat",  produto:"Xcel 130",           nivel:"iniciante",    estilo:["polivalente","defensivo"],             material:"multifilamento", espessura:"1.30mm", tensao_rec:"48-54 lbs", preco_brl:"R$ 50–R$ 75",    busca:"Babolat Xcel 1.30 corda tênis",     pontos_spin:3, pontos_controle:3, pontos_conforto:5, descricao:"Corda de entrada confortável com boa durabilidade. Popular em academias e jogadores iniciantes." },
     // ── INTERMEDIÁRIO ──
-    { id:"babolat-rpm-blast-125", marca:"Babolat", produto:"RPM Blast 125",  nivel:"intermediario",estilo:["baseline","polivalente"],             material:"monofilamento co-poly", espessura:"1.25mm", tensao_rec:"52-57 lbs", preco_brl:"R$ 80–R$ 120", busca:"Babolat RPM Blast 1.25 review", pontos_spin:5, pontos_controle:4, pontos_conforto:3, descricao:"A corda mais vendida do mundo. Snap-back excepcional para spin. Usada por Nadal. Referência em co-poly." },
-    { id:"solinco-tour-bite-125", marca:"Solinco", produto:"Tour Bite 125",  nivel:"intermediario",estilo:["baseline","polivalente"],             material:"monofilamento co-poly", espessura:"1.25mm", tensao_rec:"50-56 lbs", preco_brl:"R$ 90–R$ 135", busca:"Solinco Tour Bite 1.25 review", pontos_spin:5, pontos_controle:4, pontos_conforto:2, descricao:"Perfil pentagonal para máximo mordida na bola. Favorita de jogadores de topspin agressivos." },
-    { id:"head-hawk-125",     marca:"Head",     produto:"Hawk Touch 125",     nivel:"intermediario",estilo:["polivalente","saque-voleio"],          material:"monofilamento co-poly", espessura:"1.25mm", tensao_rec:"50-56 lbs", preco_brl:"R$ 75–R$ 110", busca:"Head Hawk Touch review",      pontos_spin:4, pontos_controle:5, pontos_conforto:3, descricao:"Co-poly com excelente controle e feeling. Mais confortável que cordas de spin puras. Versátil." },
+    { id:"babolat-rpm-blast-125", marca:"Babolat", produto:"RPM Blast 125",  nivel:"intermediario",estilo:["baseline","polivalente"],             material:"monofilamento co-poly", espessura:"1.25mm", tensao_rec:"52-57 lbs", preco_brl:"R$ 80–R$ 120", busca:"Babolat RPM Blast 125 corda tênis", pontos_spin:5, pontos_controle:4, pontos_conforto:3, descricao:"A corda mais vendida do mundo. Snap-back excepcional para spin. Usada por Nadal. Referência em co-poly." },
+    { id:"solinco-tour-bite-125", marca:"Solinco", produto:"Tour Bite 125",  nivel:"intermediario",estilo:["baseline","polivalente"],             material:"monofilamento co-poly", espessura:"1.25mm", tensao_rec:"50-56 lbs", preco_brl:"R$ 90–R$ 135", busca:"Solinco Tour Bite 125 corda tênis", pontos_spin:5, pontos_controle:4, pontos_conforto:2, descricao:"Perfil pentagonal para máximo mordida na bola. Favorita de jogadores de topspin agressivos." },
+    { id:"head-hawk-125",     marca:"Head",     produto:"Hawk Touch 125",     nivel:"intermediario",estilo:["polivalente","saque-voleio"],          material:"monofilamento co-poly", espessura:"1.25mm", tensao_rec:"50-56 lbs", preco_brl:"R$ 75–R$ 110", busca:"Head Hawk Touch 125 corda tênis",      pontos_spin:4, pontos_controle:5, pontos_conforto:3, descricao:"Co-poly com excelente controle e feeling. Mais confortável que cordas de spin puras. Versátil." },
     // ── AVANÇADO ──
-    { id:"luxilon-alu-power-125", marca:"Luxilon", produto:"ALU Power 125",  nivel:"avancado",     estilo:["baseline","polivalente","saque-voleio"],material:"monofilamento co-poly aluminium", espessura:"1.25mm", tensao_rec:"48-54 lbs", preco_brl:"R$ 120–R$ 170", busca:"Luxilon ALU Power 125 review", pontos_spin:4, pontos_controle:5, pontos_conforto:3, descricao:"Referência absoluta no tour. Usada por Djokovic e Federer (híbrido). Controle e tensão estável." },
-    { id:"luxilon-4g-125",    marca:"Luxilon",  produto:"4G 125",             nivel:"avancado",     estilo:["baseline","polivalente"],             material:"monofilamento co-poly", espessura:"1.25mm", tensao_rec:"48-54 lbs", preco_brl:"R$ 130–R$ 180", busca:"Luxilon 4G 125 review",       pontos_spin:5, pontos_controle:5, pontos_conforto:3, descricao:"Evolução da ALU Power com mais spin. Preferida por jogadores que querem o melhor dos dois mundos." },
+    { id:"luxilon-alu-power-125", marca:"Luxilon", produto:"ALU Power 125",  nivel:"avancado",     estilo:["baseline","polivalente","saque-voleio"],material:"monofilamento co-poly aluminium", espessura:"1.25mm", tensao_rec:"48-54 lbs", preco_brl:"R$ 120–R$ 170", busca:"Luxilon ALU Power 125 corda tênis", pontos_spin:4, pontos_controle:5, pontos_conforto:3, descricao:"Referência absoluta no tour. Usada por Djokovic e Federer (híbrido). Controle e tensão estável." },
+    { id:"luxilon-4g-125",    marca:"Luxilon",  produto:"4G 125",             nivel:"avancado",     estilo:["baseline","polivalente"],             material:"monofilamento co-poly", espessura:"1.25mm", tensao_rec:"48-54 lbs", preco_brl:"R$ 130–R$ 180", busca:"Luxilon 4G 125 corda raquete",       pontos_spin:5, pontos_controle:5, pontos_conforto:3, descricao:"Evolução da ALU Power com mais spin. Preferida por jogadores que querem o melhor dos dois mundos." },
     // ── PROFISSIONAL ──
-    { id:"wilson-natural-gut-16", marca:"Wilson", produto:"Natural Gut 16",  nivel:"profissional", estilo:["polivalente","saque-voleio","defensivo"],material:"tripa natural", espessura:"1.30mm", tensao_rec:"52-60 lbs", preco_brl:"R$ 280–R$ 420", busca:"Wilson Natural Gut 16 review", pontos_spin:3, pontos_controle:5, pontos_conforto:5, descricao:"A corda original e ainda a melhor em conforto e potência viva. Usada como cruzada no híbrido de Federer." },
-    { id:"babolat-rpm-hurricane-125", marca:"Babolat", produto:"RPM Hurricane 125", nivel:"profissional", estilo:["baseline"], material:"monofilamento co-poly", espessura:"1.25mm", tensao_rec:"50-56 lbs", preco_brl:"R$ 110–R$ 160", busca:"Babolat RPM Hurricane review", pontos_spin:5, pontos_controle:4, pontos_conforto:2, descricao:"Perfil octogonal para spin extremo. Para jogadores que querem ainda mais efeito que a RPM Blast." },
+    { id:"wilson-natural-gut-16", marca:"Wilson", produto:"Natural Gut 16",  nivel:"profissional", estilo:["polivalente","saque-voleio","defensivo"],material:"tripa natural", espessura:"1.30mm", tensao_rec:"52-60 lbs", preco_brl:"R$ 280–R$ 420", busca:"Wilson Natural Gut 16 corda tênis", pontos_spin:3, pontos_controle:5, pontos_conforto:5, descricao:"A corda original e ainda a melhor em conforto e potência viva. Usada como cruzada no híbrido de Federer." },
+    { id:"babolat-rpm-hurricane-125", marca:"Babolat", produto:"RPM Hurricane 125", nivel:"profissional", estilo:["baseline"], material:"monofilamento co-poly", espessura:"1.25mm", tensao_rec:"50-56 lbs", preco_brl:"R$ 110–R$ 160", busca:"Babolat RPM Hurricane 125 corda", pontos_spin:5, pontos_controle:4, pontos_conforto:2, descricao:"Perfil octogonal para spin extremo. Para jogadores que querem ainda mais efeito que a RPM Blast." },
   ],
 
   bola: [
-    { id:"wilson-us-open",    marca:"Wilson",   produto:"US Open Extra Duty", nivel:"todos",        superficies:["quadra dura","saibro"],           durabilidade:4, pressao:5, preco_brl:"R$ 55–R$ 75 (tubo 3)",  busca:"Wilson US Open ball review", pontos_qualidade:5, descricao:"Bola oficial do US Open. Feltro extra duty para quadras duras. Excelente durabilidade e pressão consistente." },
-    { id:"penn-atp",          marca:"Penn",     produto:"ATP Regular Duty",   nivel:"todos",        superficies:["saibro","grama","indoor"],        durabilidade:4, pressao:5, preco_brl:"R$ 50–R$ 70 (tubo 3)",  busca:"Penn ATP ball review",       pontos_qualidade:5, descricao:"Bola oficial ATP. Regular duty para saibro e pisos internos. Padrão de torneios internacionais." },
-    { id:"babolat-gold",      marca:"Babolat",  produto:"Gold Premium",       nivel:"todos",        superficies:["saibro","grama"],                durabilidade:5, pressao:4, preco_brl:"R$ 60–R$ 80 (tubo 4)",  busca:"Babolat Gold ball review",   pontos_qualidade:5, descricao:"4 bolas por tubo. Feltro premium com excelente durabilidade. Popular em treinamentos e academias." },
-    { id:"head-pro",          marca:"Head",     produto:"Pro S",              nivel:"iniciante|intermediario", superficies:["saibro","indoor"],   durabilidade:3, pressao:4, preco_brl:"R$ 45–R$ 60 (tubo 4)",  busca:"Head Pro S ball review",     pontos_qualidade:4, descricao:"Boa opção de custo-benefício para treinos regulares em saibro." },
-    { id:"dunlop-atp",        marca:"Dunlop",   produto:"ATP Championship",   nivel:"todos",        superficies:["quadra dura","saibro"],           durabilidade:4, pressao:5, preco_brl:"R$ 48–R$ 68 (tubo 3)",  busca:"Dunlop ATP Championship ball review", pontos_qualidade:5, descricao:"Bola oficial ATP Championship. Tecnologia HD Core para pressão consistente por mais tempo." },
+    { id:"wilson-us-open",    marca:"Wilson",   produto:"US Open Extra Duty", nivel:"todos",        superficies:["quadra dura","saibro"],           durabilidade:4, pressao:5, preco_brl:"R$ 55–R$ 75 (tubo 3)",  busca:"Wilson US Open bola tênis", pontos_qualidade:5, descricao:"Bola oficial do US Open. Feltro extra duty para quadras duras. Excelente durabilidade e pressão consistente." },
+    { id:"penn-atp",          marca:"Penn",     produto:"ATP Regular Duty",   nivel:"todos",        superficies:["saibro","grama","indoor"],        durabilidade:4, pressao:5, preco_brl:"R$ 50–R$ 70 (tubo 3)",  busca:"Penn ATP bola tênis",       pontos_qualidade:5, descricao:"Bola oficial ATP. Regular duty para saibro e pisos internos. Padrão de torneios internacionais." },
+    { id:"babolat-gold",      marca:"Babolat",  produto:"Gold Premium",       nivel:"todos",        superficies:["saibro","grama"],                durabilidade:5, pressao:4, preco_brl:"R$ 60–R$ 80 (tubo 4)",  busca:"Babolat Gold Premium bola tênis",   pontos_qualidade:5, descricao:"4 bolas por tubo. Feltro premium com excelente durabilidade. Popular em treinamentos e academias." },
+    { id:"head-pro",          marca:"Head",     produto:"Pro S",              nivel:"iniciante|intermediario", superficies:["saibro","indoor"],   durabilidade:3, pressao:4, preco_brl:"R$ 45–R$ 60 (tubo 4)",  busca:"Head Pro S bola tênis",     pontos_qualidade:4, descricao:"Boa opção de custo-benefício para treinos regulares em saibro." },
+    { id:"dunlop-atp",        marca:"Dunlop",   produto:"ATP Championship",   nivel:"todos",        superficies:["quadra dura","saibro"],           durabilidade:4, pressao:5, preco_brl:"R$ 48–R$ 68 (tubo 3)",  busca:"Dunlop ATP Championship bola tênis", pontos_qualidade:5, descricao:"Bola oficial ATP Championship. Tecnologia HD Core para pressão consistente por mais tempo." },
   ],
 
   raqueteira: [
-    { id:"head-tour-team-12r", marca:"Head",    produto:"Tour Team 12R Monstercombi", nivel:"todos", capacidade:"12 raquetes", bolsos:5, mochila:true,  preco_brl:"R$ 420–R$ 600",  busca:"Head Tour Team 12R bag review",  pontos_organizacao:5, pontos_protecao:5, descricao:"Raqueteira completa com compartimento térmico para raquetes, bolso para roupas e sistema de mochila." },
-    { id:"wilson-super-tour-9r", marca:"Wilson", produto:"Super Tour 9 Pack", nivel:"todos",        capacidade:"9 raquetes",  bolsos:4, mochila:false, preco_brl:"R$ 300–R$ 450",  busca:"Wilson Super Tour 9 Pack review", pontos_organizacao:4, pontos_protecao:5, descricao:"Clássica do tour. Compartimento térmico, bolso de acessórios separado. Excelente proteção." },
-    { id:"babolat-pure-aero-6r", marca:"Babolat", produto:"Pure Aero Racket Holder x6", nivel:"iniciante|intermediario", capacidade:"6 raquetes", bolsos:3, mochila:false, preco_brl:"R$ 200–R$ 320", busca:"Babolat Pure Aero bag review", pontos_organizacao:3, pontos_protecao:4, descricao:"Compacta e funcional para o dia a dia. Combina com a linha Pure Aero. Boa entrada no mundo das raqueteiras." },
-    { id:"tecnifibre-tour-endurance-15r", marca:"Tecnifibre", produto:"Tour Endurance 15R", nivel:"avancado|profissional", capacidade:"15 raquetes", bolsos:6, mochila:true, preco_brl:"R$ 650–R$ 950", busca:"Tecnifibre Tour Endurance 15R review", pontos_organizacao:5, pontos_protecao:5, descricao:"Para atletas sérios. 15 raquetes, 6 bolsos organizados, compartimento sapatos separado e sistema mochila." },
-    { id:"head-djokovic-supercombi", marca:"Head", produto:"Djokovic Supercombi 9R", nivel:"intermediario|avancado", capacidade:"9 raquetes", bolsos:4, mochila:true, preco_brl:"R$ 480–R$ 700", busca:"Head Djokovic bag review", pontos_organizacao:5, pontos_protecao:5, descricao:"Edição especial Djokovic. Compartimento térmico duplo, bolso laptop, sistema mochila integrado." },
+    { id:"head-tour-team-12r", marca:"Head",    produto:"Tour Team 12R Monstercombi", nivel:"todos", capacidade:"12 raquetes", bolsos:5, mochila:true,  preco_brl:"R$ 420–R$ 600",  busca:"Head Tour Team 12R raqueteira tênis",  pontos_organizacao:5, pontos_protecao:5, descricao:"Raqueteira completa com compartimento térmico para raquetes, bolso para roupas e sistema de mochila." },
+    { id:"wilson-super-tour-9r", marca:"Wilson", produto:"Super Tour 9 Pack", nivel:"todos",        capacidade:"9 raquetes",  bolsos:4, mochila:false, preco_brl:"R$ 300–R$ 450",  busca:"Wilson Super Tour 9 Pack raqueteira", pontos_organizacao:4, pontos_protecao:5, descricao:"Clássica do tour. Compartimento térmico, bolso de acessórios separado. Excelente proteção." },
+    { id:"babolat-pure-aero-6r", marca:"Babolat", produto:"Pure Aero Racket Holder x6", nivel:"iniciante|intermediario", capacidade:"6 raquetes", bolsos:3, mochila:false, preco_brl:"R$ 200–R$ 320", busca:"Babolat Pure Aero raqueteira x6", pontos_organizacao:3, pontos_protecao:4, descricao:"Compacta e funcional para o dia a dia. Combina com a linha Pure Aero. Boa entrada no mundo das raqueteiras." },
+    { id:"tecnifibre-tour-endurance-15r", marca:"Tecnifibre", produto:"Tour Endurance 15R", nivel:"avancado|profissional", capacidade:"15 raquetes", bolsos:6, mochila:true, preco_brl:"R$ 650–R$ 950", busca:"Tecnifibre Tour Endurance 15R raqueteira", pontos_organizacao:5, pontos_protecao:5, descricao:"Para atletas sérios. 15 raquetes, 6 bolsos organizados, compartimento sapatos separado e sistema mochila." },
+    { id:"head-djokovic-supercombi", marca:"Head", produto:"Djokovic Supercombi 9R", nivel:"intermediario|avancado", capacidade:"9 raquetes", bolsos:4, mochila:true, preco_brl:"R$ 480–R$ 700", busca:"Head Djokovic Supercombi 9R raqueteira", pontos_organizacao:5, pontos_protecao:5, descricao:"Edição especial Djokovic. Compartimento térmico duplo, bolso laptop, sistema mochila integrado." },
   ],
 
   tenis: [
     // ── SAIBRO ──
-    { id:"asics-gel-resolution-9", marca:"Asics", produto:"Gel-Resolution 9",  nivel:"todos",     superficies:["saibro","quadra dura"],          drop:"10mm", cabedal:"sintético", sola:"Herringbone",     preco_brl:"R$ 700–R$ 1.000", busca:"Asics Gel Resolution 9 review", pontos_estabilidade:5, pontos_amortecimento:5, pontos_durabilidade:5, descricao:"Referência em estabilidade. Tecnologia GELTM no calcanhar. Sola dupla de borracha com HB 3D para saibro." },
-    { id:"nike-air-zoom-vapor-pro-2", marca:"Nike", produto:"Air Zoom Vapor Pro 2", nivel:"todos", superficies:["quadra dura","saibro"],          drop:"9mm",  cabedal:"mesh",      sola:"RC outsole",       preco_brl:"R$ 750–R$ 1.100", busca:"Nike Air Zoom Vapor Pro 2 review", pontos_estabilidade:4, pontos_amortecimento:5, pontos_durabilidade:4, descricao:"Leve e responsivo. Air Zoom no antepé para resposta explosiva. Favorito de jogadores que buscam velocidade." },
-    { id:"adidas-barricade-13",    marca:"Adidas",  produto:"Barricade 13",        nivel:"todos",     superficies:["quadra dura","saibro"],          drop:"10mm", cabedal:"TPU",        sola:"Adiwear 6",        preco_brl:"R$ 680–R$ 950",   busca:"Adidas Barricade 13 review",    pontos_estabilidade:5, pontos_amortecimento:4, pontos_durabilidade:5, descricao:"O tênis mais durável do mercado. Gaiola TPU para suporte total. Garantia de 6 meses pela Adidas." },
-    { id:"new-balance-fresh-foam-lav2", marca:"New Balance", produto:"Fresh Foam LAV2", nivel:"todos", superficies:["saibro","grama"],             drop:"8mm",  cabedal:"mesh premium", sola:"HC clay",        preco_brl:"R$ 620–R$ 880",   busca:"New Balance Fresh Foam LAV2 review", pontos_estabilidade:4, pontos_amortecimento:5, pontos_durabilidade:4, descricao:"Fresh Foam midsole premium. Excelente amortecimento para jogadores que sentem o impacto no joelho." },
-    { id:"babolat-jet-mach-3",     marca:"Babolat",  produto:"Jet Mach 3",          nivel:"intermediario|avancado", superficies:["saibro","quadra dura"], drop:"8mm", cabedal:"3D synthetic", sola:"Michelin outsole", preco_brl:"R$ 800–R$ 1.150", busca:"Babolat Jet Mach 3 review", pontos_estabilidade:4, pontos_amortecimento:4, pontos_durabilidade:4, descricao:"Sola Michelin para aderência excepcional em saibro. Calce e sensação de velocidade." },
-    { id:"wilson-rush-pro-4",      marca:"Wilson",   produto:"Rush Pro 4.0",        nivel:"intermediario|avancado", superficies:["quadra dura"],         drop:"10mm", cabedal:"Duralast", sola:"R-DST",           preco_brl:"R$ 650–R$ 900",   busca:"Wilson Rush Pro 4 review", pontos_estabilidade:5, pontos_amortecimento:4, pontos_durabilidade:5, descricao:"Construção 3 camadas para quadra dura. Excelente durabilidade e estabilidade lateral." },
+    { id:"asics-gel-resolution-9", marca:"Asics", produto:"Gel-Resolution 9",  nivel:"todos",     superficies:["saibro","quadra dura"],          drop:"10mm", cabedal:"sintético", sola:"Herringbone",     preco_brl:"R$ 700–R$ 1.000", busca:"Asics Gel Resolution 9 tênis quadra", pontos_estabilidade:5, pontos_amortecimento:5, pontos_durabilidade:5, descricao:"Referência em estabilidade. Tecnologia GELTM no calcanhar. Sola dupla de borracha com HB 3D para saibro." },
+    { id:"nike-air-zoom-vapor-pro-2", marca:"Nike", produto:"Air Zoom Vapor Pro 2", nivel:"todos", superficies:["quadra dura","saibro"],          drop:"9mm",  cabedal:"mesh",      sola:"RC outsole",       preco_brl:"R$ 750–R$ 1.100", busca:"Nike Air Zoom Vapor Pro 2 tênis", pontos_estabilidade:4, pontos_amortecimento:5, pontos_durabilidade:4, descricao:"Leve e responsivo. Air Zoom no antepé para resposta explosiva. Favorito de jogadores que buscam velocidade." },
+    { id:"adidas-barricade-13",    marca:"Adidas",  produto:"Barricade 13",        nivel:"todos",     superficies:["quadra dura","saibro"],          drop:"10mm", cabedal:"TPU",        sola:"Adiwear 6",        preco_brl:"R$ 680–R$ 950",   busca:"Adidas Barricade 13 tênis quadra",    pontos_estabilidade:5, pontos_amortecimento:4, pontos_durabilidade:5, descricao:"O tênis mais durável do mercado. Gaiola TPU para suporte total. Garantia de 6 meses pela Adidas." },
+    { id:"new-balance-fresh-foam-lav2", marca:"New Balance", produto:"Fresh Foam LAV2", nivel:"todos", superficies:["saibro","grama"],             drop:"8mm",  cabedal:"mesh premium", sola:"HC clay",        preco_brl:"R$ 620–R$ 880",   busca:"New Balance Fresh Foam LAV2 tênis", pontos_estabilidade:4, pontos_amortecimento:5, pontos_durabilidade:4, descricao:"Fresh Foam midsole premium. Excelente amortecimento para jogadores que sentem o impacto no joelho." },
+    { id:"babolat-jet-mach-3",     marca:"Babolat",  produto:"Jet Mach 3",          nivel:"intermediario|avancado", superficies:["saibro","quadra dura"], drop:"8mm", cabedal:"3D synthetic", sola:"Michelin outsole", preco_brl:"R$ 800–R$ 1.150", busca:"Babolat Jet Mach 3 tênis quadra", pontos_estabilidade:4, pontos_amortecimento:4, pontos_durabilidade:4, descricao:"Sola Michelin para aderência excepcional em saibro. Calce e sensação de velocidade." },
+    { id:"wilson-rush-pro-4",      marca:"Wilson",   produto:"Rush Pro 4.0",        nivel:"intermediario|avancado", superficies:["quadra dura"],         drop:"10mm", cabedal:"Duralast", sola:"R-DST",           preco_brl:"R$ 650–R$ 900",   busca:"Wilson Rush Pro 4.0 tênis quadra", pontos_estabilidade:5, pontos_amortecimento:4, pontos_durabilidade:5, descricao:"Construção 3 camadas para quadra dura. Excelente durabilidade e estabilidade lateral." },
   ],
 };
 
@@ -199,11 +199,42 @@ function ytSearchEN(query) {
   return `https://www.youtube.com/results?search_query=${encodeURIComponent(query + " review test 2024")}`;
 }
 
-const STORES = (busca) => [
-  { name:"Amazon",       color:"#FF9900", bg:"rgba(255,153,0,.1)",    border:"rgba(255,153,0,.3)",    url:`https://www.amazon.com.br/s?k=${encodeURIComponent(busca)}&tag=SEUTAG-20` },
-  { name:"Netshoes",     color:"#E30613", bg:"rgba(227,6,19,.1)",     border:"rgba(227,6,19,.3)",     url:`https://www.netshoes.com.br/busca?q=${encodeURIComponent(busca)}&utm_source=tennislab` },
-  { name:"Centauro",     color:"#00AEEF", bg:"rgba(0,174,239,.1)",    border:"rgba(0,174,239,.3)",    url:`https://www.centauro.com.br/busca?q=${encodeURIComponent(busca)}&utm_source=tennislab` },
-  { name:"Tennis Point", color:"#c8f06a", bg:"rgba(200,240,106,.07)", border:"rgba(200,240,106,.2)",  url:`https://www.tennispoint.com.br/search?q=${encodeURIComponent(busca)}` },
+/* Gera links de loja — usa link direto (amazon_asin/url_direta) quando disponível */
+const STORES = (busca, links={}) => [
+  {
+    name:"Amazon",
+    color:"#FF9900",
+    bg:"rgba(255,153,0,.1)",
+    border:"rgba(255,153,0,.3)",
+    url: links.amazon
+      ? `${links.amazon}?tag=SEUTAG-20`
+      : `https://www.amazon.com.br/s?k=${encodeURIComponent(busca)}&rh=n%3A18756995011&tag=SEUTAG-20`
+  },
+  {
+    name:"Netshoes",
+    color:"#E30613",
+    bg:"rgba(227,6,19,.1)",
+    border:"rgba(227,6,19,.3)",
+    url: links.netshoes
+      ? links.netshoes
+      : `https://www.netshoes.com.br/busca?q=${encodeURIComponent(busca)}`
+  },
+  {
+    name:"Centauro",
+    color:"#00AEEF",
+    bg:"rgba(0,174,239,.1)",
+    border:"rgba(0,174,239,.3)",
+    url: links.centauro
+      ? links.centauro
+      : `https://www.centauro.com.br/busca?q=${encodeURIComponent(busca)}`
+  },
+  {
+    name:"Tennis Point",
+    color:"#c8f06a",
+    bg:"rgba(200,240,106,.07)",
+    border:"rgba(200,240,106,.2)",
+    url:`https://www.tennispoint.com.br/search?q=${encodeURIComponent(busca)}`
+  },
 ];
 
 const CATS = [
@@ -211,7 +242,7 @@ const CATS = [
   { id:"corda",      label:"Corda",      icon:"〰️", desc:"Tensão, spin e controle",  color:"#40c8d8" },
   { id:"bola",       label:"Bola",       icon:"🟡", desc:"Pressão e durabilidade",   color:"#f0c840" },
   { id:"raqueteira", label:"Raqueteira", icon:"🎒", desc:"Proteção e capacidade",    color:"#d870a8" },
-  { id:"tenis",      label:"Tênis",      icon:"👟", desc:"Court e amortecimento",    color:"#f08840" },
+  { id:"tenis",      label:"Calçado",    icon:"👟", desc:"Tênis para jogar na quadra",    color:"#f08840" },
 ];
 const QUIZ = [
   { id:"nivel",      q:"Qual é o seu nível de jogo?",     icon:"🏅", opts:["Iniciante","Intermediário","Avançado","Profissional / Competidor"] },
@@ -250,13 +281,13 @@ body{overflow-x:hidden;}
 .btn-ghost{background:transparent;border:1px solid rgba(230,244,234,.15);color:rgba(230,244,234,.45);padding:11px 22px;border-radius:8px;font-family:'Outfit',sans-serif;font-size:14px;cursor:pointer;transition:all .2s;min-height:44px;}
 
 /* ── Links de loja ── */
-.store-link{display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 12px;border-radius:8px;text-decoration:none;font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;transition:all .2s;flex:1;min-width:120px;min-height:40px;}
-.yt-link{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:8px;text-decoration:none;font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;background:rgba(255,0,0,.1);border:1px solid rgba(255,60,60,.3);color:#ff7070;transition:all .2s;min-height:40px;}
+.store-link{display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 12px;border-radius:8px;text-decoration:none;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;transition:all .2s;flex:1;min-width:120px;min-height:40px;}
+.yt-link{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:8px;text-decoration:none;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;background:rgba(255,0,0,.1);border:1px solid rgba(255,60,60,.3);color:#ff7070;transition:all .2s;min-height:40px;}
 
 /* ── Badges e tags ── */
-.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;}
-.spec-tag{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:4px 10px;font-size:11px;color:rgba(230,244,234,.55);}
-.ai-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(168,216,64,.08);border:1px solid rgba(168,216,64,.18);border-radius:6px;padding:3px 10px;font-size:11px;color:rgba(168,216,64,.8);}
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;}
+.spec-tag{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:5px 11px;font-size:13px;color:rgba(230,244,234,.7);}
+.ai-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(168,216,64,.08);border:1px solid rgba(168,216,64,.18);border-radius:6px;padding:4px 11px;font-size:13px;color:rgba(168,216,64,.9);}
 
 /* ── Progress ── */
 .prog-track{height:3px;background:rgba(140,220,80,.12);border-radius:2px;margin-bottom:40px;}
@@ -264,7 +295,7 @@ body{overflow-x:hidden;}
 
 /* ── Header ── */
 header{padding:14px 20px;border-bottom:1px solid rgba(140,220,80,.1);display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(12px);background:rgba(7,16,13,.9);position:sticky;top:0;z-index:200;}
-.header-subtitle{font-size:10px;color:rgba(230,244,234,.3);letter-spacing:1.5px;}
+.header-subtitle{font-size:11px;color:rgba(230,244,234,.5);letter-spacing:1.5px;font-family:'Outfit',sans-serif;text-transform:uppercase;}
 
 /* ── Input ── */
 .input-field{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(140,220,80,.22);border-radius:8px;padding:12px 14px;color:#e6f4ea;font-family:'Outfit',sans-serif;font-size:16px;outline:none;transition:border-color .2s;}
@@ -272,7 +303,7 @@ header{padding:14px 20px;border-bottom:1px solid rgba(140,220,80,.1);display:fle
 .input-field::placeholder{color:rgba(230,244,234,.28);}
 
 /* ── Push banner ── */
-.push-banner{background:linear-gradient(90deg,rgba(168,216,64,.1),rgba(0,174,239,.07));border-bottom:1px solid rgba(168,216,64,.15);padding:10px 20px;display:flex;align-items:center;gap:12px;font-size:13px;min-height:48px;}
+.push-banner{background:linear-gradient(90deg,rgba(168,216,64,.1),rgba(0,174,239,.07));border-bottom:1px solid rgba(168,216,64,.15);padding:10px 20px;display:flex;align-items:center;gap:12px;font-size:14px;min-height:50px;}
 .push-actions{display:flex;gap:8px;margin-left:auto;}
 
 /* ── Modal ── */
@@ -288,13 +319,13 @@ header{padding:14px 20px;border-bottom:1px solid rgba(140,220,80,.1);display:fle
 .chat-messages{height:240px;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:10px;}
 .chat-messages::-webkit-scrollbar{width:4px;}
 .chat-messages::-webkit-scrollbar-thumb{background:rgba(168,216,64,.2);border-radius:2px;}
-.msg-bot{background:rgba(255,255,255,.05);border-radius:0 10px 10px 10px;padding:10px 13px;font-size:13px;line-height:1.55;max-width:88%;color:#e6f4ea;}
-.msg-user{background:rgba(168,216,64,.14);border:1px solid rgba(168,216,64,.18);border-radius:10px 0 10px 10px;padding:10px 13px;font-size:13px;line-height:1.55;max-width:88%;color:#d6f09a;align-self:flex-end;text-align:right;}
+.msg-bot{background:rgba(255,255,255,.05);border-radius:0 10px 10px 10px;padding:11px 14px;font-size:14px;line-height:1.65;max-width:88%;color:#e6f4ea;}
+.msg-user{background:rgba(168,216,64,.14);border:1px solid rgba(168,216,64,.18);border-radius:10px 0 10px 10px;padding:11px 14px;font-size:14px;line-height:1.65;max-width:88%;color:#d6f09a;align-self:flex-end;text-align:right;}
 .chat-input-area{border-top:1px solid rgba(140,220,80,.1);padding:10px;display:flex;gap:8px;}
 .chat-send{background:linear-gradient(135deg,#a8d840,#7db800);border:none;border-radius:7px;width:44px;height:44px;cursor:pointer;font-size:18px;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
 
 /* ── Alert row ── */
-.alert-btn{background:rgba(168,216,64,.1);border:1px solid rgba(168,216,64,.26);color:#a8d840;border-radius:7px;padding:10px 14px;font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .18s;min-height:40px;}
+.alert-btn{background:rgba(168,216,64,.1);border:1px solid rgba(168,216,64,.26);color:#a8d840;border-radius:7px;padding:10px 14px;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .18s;min-height:40px;}
 .alert-row{display:flex;gap:8px;align-items:center;margin-top:10px;flex-wrap:wrap;}
 .alert-row input{min-width:0;flex:1;}
 
@@ -304,7 +335,7 @@ header{padding:14px 20px;border-bottom:1px solid rgba(140,220,80,.1);display:fle
 .prod-card.second{border:1px solid rgba(64,200,216,.2);}
 .prod-card.third{border:1px solid rgba(255,255,255,.07);}
 .kit-card-toggle{border-radius:13px;padding:16px 12px;cursor:pointer;text-align:center;transition:all .22s;position:relative;overflow:hidden;border-width:2px;border-style:solid;}
-.status-pill{position:absolute;top:6px;right:6px;font-size:9px;font-weight:700;letter-spacing:.5px;padding:2px 6px;border-radius:10px;text-transform:uppercase;}
+.status-pill{position:absolute;top:6px;right:6px;font-size:12px;font-weight:700;letter-spacing:.5px;padding:2px 6px;border-radius:10px;text-transform:uppercase;}
 .kit-section{background:rgba(255,255,255,.022);border-radius:14px;padding:16px;margin-bottom:14px;border-left:3px solid;}
 .sinergia-box{background:linear-gradient(135deg,rgba(168,216,64,.07),rgba(64,200,216,.05));border:1px solid rgba(168,216,64,.16);border-radius:14px;padding:18px;margin-bottom:18px;}
 
@@ -314,7 +345,7 @@ header{padding:14px 20px;border-bottom:1px solid rgba(140,220,80,.1);display:fle
 
 /* ── Misc ── */
 .tab-row{display:flex;gap:8px;margin-bottom:28px;flex-wrap:wrap;}
-.tab-btn{padding:9px 20px;border-radius:8px;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;border:none;}
+.tab-btn{padding:9px 20px;border-radius:8px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;border:none;}
 .tab-active{background:linear-gradient(135deg,#a8d840,#7db800);color:#07100d;}
 .tab-inactive{background:rgba(255,255,255,.04);color:rgba(230,244,234,.4);border:1px solid rgba(255,255,255,.07);}
 
@@ -444,7 +475,7 @@ export default function TennisLab() {
             <span style={{ fontSize:26, lineHeight:1 }}>🎾</span>
             <div>
               <div style={{ fontFamily:"'Anton',sans-serif", fontSize:20, letterSpacing:3, color:"#a8d840", lineHeight:1.1 }}>TENNISLAB</div>
-              <div className="header-subtitle">COMPARE RAQUETES · CORDAS · BOLAS · TÊNIS DE COURT</div>
+              <div className="header-subtitle">RAQUETES · CORDAS · BOLAS · CALÇADOS · RAQUETEIRAS</div>
             </div>
           </div>
           {step>0 && <button className="btn-ghost" onClick={reset}>← Início</button>}
@@ -471,7 +502,7 @@ export default function TennisLab() {
 const FAQ_DATA = [
   { q:"Qual a melhor raquete de tênis para iniciante?", a:"Para iniciantes recomendamos raquetes leves com cabeça grande (110–115 pol.) como a Head Ti.S6 (232g) ou Wilson Hyper Hammer 5.3. Elas geram potência com menos esforço e são mais forgiving nos erros de timing." },
   { q:"Qual a melhor corda de tênis para topspin?", a:"A Babolat RPM Blast 1.25mm é a referência mundial para spin, usada por Nadal. Para mais conforto mantendo bom spin, a Head Hawk Touch é excelente alternativa. Cordas co-poly com perfil redondo ou pentagonal maximizam o efeito." },
-  { q:"Qual tênis (calçado) usar para jogar tênis no saibro?", a:"Para saibro (terra batida), o Asics Gel-Resolution 9 é referência com sola Herringbone 3D. O Babolat Jet Mach 3 com sola Michelin também é muito popular. Evite tênis de corrida — eles não têm aderência lateral adequada." },
+  { q:"Qual calçado é melhor para jogar tênis?", a:"Para saibro (terra batida), o Asics Gel-Resolution 9 é referência com sola Herringbone 3D. O Babolat Jet Mach 3 com sola Michelin também é muito popular. Evite calçados de corrida — eles não têm suporte lateral adequado para quadra." },
   { q:"Qual a tensão ideal para encordoar uma raquete?", a:"Iniciantes e jogadores de controle: 48–52 lbs. Jogadores intermediários: 52–56 lbs. Avançados com jogo agressivo: 54–58 lbs. Cordas co-poly devem ser sempre encordoadas mais baixas (48–54 lbs) para preservar o braço." },
   { q:"Qual a diferença entre raquete head-heavy e head-light?", a:"Head-heavy: mais peso na cabeça, mais potência — ideal para iniciantes e jogadores de fundo de quadra. Head-light: mais peso no cabo, mais controle e velocidade de swing — preferida por jogadores avançados e saque-e-voleio." },
   { q:"Onde comprar raquete de tênis com o melhor preço?", a:"Compare preços na Amazon, Netshoes, Centauro e Tennis Point — as 4 maiores lojas do Brasil. Os preços variam bastante entre elas. Use o TennisLab para comparar todos de uma vez antes de decidir." },
@@ -487,19 +518,19 @@ function HomeStep({ onSingle, onKit }) {
         <h1 style={{ fontFamily:"'Anton',sans-serif", fontSize:"clamp(32px,8vw,72px)", lineHeight:1, letterSpacing:"clamp(1px,1vw,3px)", marginBottom:14 }}>
           <span style={{ color:"#a8d840" }}>COMPARE</span><br/>
           <span>EQUIPAMENTOS</span><br/>
-          <span style={{ color:"rgba(230,244,234,.18)" }}>DE TÊNIS</span>
+          <span style={{ color:"rgba(230,244,234,.42)" }}>DE TÊNIS</span>
         </h1>
         <p style={{ color:"rgba(230,244,234,.52)", fontSize:15, maxWidth:540, margin:"0 auto 18px", lineHeight:1.75 }}>
-          Descubra a <strong style={{ color:"#e6f4ea" }}>melhor raquete de tênis</strong>, corda, bola, raqueteira e tênis de court para o seu jogo.
+          Descubra a <strong style={{ color:"#e6f4ea" }}>melhor raquete de tênis</strong>, corda, bola, raqueteira e calçado esportivo para o seu jogo.
           Produtos avaliados e selecionados pelo nosso time especialista, com comparação de preços na Amazon, Netshoes e Centauro.
         </p>
         {/* Trust bar — marcas */}
         <div style={{ display:"flex", flexWrap:"wrap", justifyContent:"center", gap:10, marginBottom:10 }}>
           {["Wilson","Babolat","Head","Yonex","Luxilon","Asics","Nike","Adidas"].map(b=>(
-            <span key={b} style={{ background:"rgba(255,255,255,.04)", border:"1px solid rgba(255,255,255,.09)", borderRadius:20, padding:"4px 14px", fontSize:12, color:"rgba(230,244,234,.5)", fontWeight:600 }}>{b}</span>
+            <span key={b} style={{ background:"rgba(255,255,255,.04)", border:"1px solid rgba(255,255,255,.09)", borderRadius:20, padding:"4px 14px", fontSize:13, color:"rgba(230,244,234,.65)", fontWeight:600 }}>{b}</span>
           ))}
         </div>
-        <p style={{ fontSize:12, color:"rgba(230,244,234,.28)", marginTop:6 }}>+30 modelos avaliados pelo time TennisLab · Wilson · Babolat · Head · Yonex · Asics · Nike · Adidas</p>
+        <p style={{ fontSize:13, color:"rgba(230,244,234,.55)", marginTop:6 }}>+30 modelos avaliados pelo time TennisLab · Wilson · Babolat · Head · Yonex · Asics · Nike · Adidas</p>
       </div>
       {/* ── MODO DE BUSCA ── */}
       <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))", gap:14, marginBottom:48, alignItems:"stretch" }}>
@@ -511,11 +542,11 @@ function HomeStep({ onSingle, onKit }) {
             <span className="badge" style={{ background:"#a8d840", color:"#07100d" }}>RECOMENDADO</span>
           </div>
           <h2 style={{ fontFamily:"'Anton',sans-serif", fontSize:22, letterSpacing:2, color:"#a8d840", marginBottom:8, fontWeight:"normal" }}>MONTE SEU KIT DE TÊNIS</h2>
-          <p style={{ fontSize:13, color:"rgba(230,244,234,.55)", lineHeight:1.7, marginBottom:16 }}>
-            Nosso time especialista analisa seu estilo de jogo e monta um <strong style={{ color:"#e6f4ea" }}>kit de tênis completo</strong> com raquete, corda, bola, raqueteira e tênis de court compatíveis entre si. Marque os itens que já possui.
+          <p style={{ fontSize:14, color:"rgba(230,244,234,.7)", lineHeight:1.75, marginBottom:16 }}>
+            Nosso time especialista analisa seu estilo de jogo e monta um <strong style={{ color:"#e6f4ea" }}>kit de tênis completo</strong> com raquete, corda, bola, raqueteira e calçado compatíveis entre si. Marque os itens que já possui.
           </p>
           <div style={{ display:"flex", flexWrap:"wrap", gap:6 }}>
-            {CATS.map(c=><span key={c.id} style={{ background:"rgba(255,255,255,.05)", border:"1px solid rgba(255,255,255,.09)", borderRadius:20, padding:"2px 10px", fontSize:11, color:"rgba(230,244,234,.45)" }}>{c.icon} {c.label}</span>)}
+            {CATS.map(c=><span key={c.id} style={{ background:"rgba(255,255,255,.05)", border:"1px solid rgba(255,255,255,.09)", borderRadius:20, padding:"3px 11px", fontSize:13, color:"rgba(230,244,234,.65)" }}>{c.icon} {c.label}</span>)}
           </div>
         </div>
         <div onClick={onSingle} style={{ cursor:"pointer", background:"rgba(255,255,255,.022)", border:"1px solid rgba(255,255,255,.07)", borderRadius:18, padding:30, transition:"all .22s", display:"flex", flexDirection:"column", boxSizing:"border-box" }}
@@ -523,15 +554,15 @@ function HomeStep({ onSingle, onKit }) {
           onMouseLeave={e=>{ e.currentTarget.style.background="rgba(255,255,255,.022)"; e.currentTarget.style.transform=""; }}>
           <span style={{ fontSize:38, display:"block", marginBottom:12 }}>🔍</span>
           <h2 style={{ fontFamily:"'Anton',sans-serif", fontSize:22, letterSpacing:2, marginBottom:8, fontWeight:"normal" }}>COMPARAR POR CATEGORIA</h2>
-          <p style={{ fontSize:13, color:"rgba(230,244,234,.45)", lineHeight:1.7, marginBottom:16 }}>
+          <p style={{ fontSize:14, color:"rgba(230,244,234,.65)", lineHeight:1.75, marginBottom:16 }}>
             Quer saber <strong style={{ color:"#e6f4ea" }}>qual a melhor raquete de tênis</strong> para o seu nível? Ou a melhor corda para mais spin? Compare 3 opções ranqueadas do custo-benefício ao premium com specs técnicos e reviews em vídeo.
           </p>
-          <div style={{ fontSize:12, color:"rgba(230,244,234,.32)" }}>Raquete de tênis · Corda · Bola · Raqueteira · Tênis de court</div>
+          <div style={{ fontSize:13, color:"rgba(230,244,234,.55)" }}>Raquete · Corda · Bola · Raqueteira · Calçado</div>
         </div>
       </div>
       {/* ── COMO FUNCIONA ── */}
       <div style={{ background:"rgba(168,216,64,.03)", border:"1px solid rgba(168,216,64,.07)", borderRadius:12, padding:24, marginBottom:40 }}>
-        <h2 style={{ fontFamily:"'Anton',sans-serif", fontSize:11, letterSpacing:2.5, color:"rgba(168,216,64,.45)", marginBottom:18, fontWeight:"normal" }}>COMO FUNCIONA</h2>
+        <h2 style={{ fontFamily:"'Anton',sans-serif", fontSize:13, letterSpacing:1.5, color:"rgba(168,216,64,.75)", marginBottom:18, fontWeight:"normal" }}>COMO FUNCIONA</h2>
         <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(160px,1fr))", gap:14 }}>
           {[
             { i:"🎯", t:"Escolha o modo",              d:"Kit completo ou comparação de uma categoria específica." },
@@ -543,7 +574,7 @@ function HomeStep({ onSingle, onKit }) {
               <span style={{ fontSize:20, flexShrink:0 }}>{s.i}</span>
               <div>
                 <h3 style={{ fontWeight:600, fontSize:13, marginBottom:3, color:"#e6f4ea" }}>{s.t}</h3>
-                <p style={{ fontSize:12, color:"rgba(230,244,234,.35)", lineHeight:1.5, margin:0 }}>{s.d}</p>
+                <p style={{ fontSize:13, color:"rgba(230,244,234,.6)", lineHeight:1.6, margin:0 }}>{s.d}</p>
               </div>
             </div>
           ))}
@@ -564,7 +595,7 @@ function HomeStep({ onSingle, onKit }) {
                 <span style={{ color:"#a8d840", fontSize:16, flexShrink:0 }}>{faqOpen===idx?"▲":"▼"}</span>
               </button>
               {faqOpen===idx && (
-                <div style={{ padding:"0 16px 14px", fontSize:13, color:"rgba(230,244,234,.6)", lineHeight:1.7 }}>{item.a}</div>
+                <div style={{ padding:"0 16px 14px", fontSize:14, color:"rgba(230,244,234,.72)", lineHeight:1.75 }}>{item.a}</div>
               )}
             </div>
           ))}
@@ -573,10 +604,10 @@ function HomeStep({ onSingle, onKit }) {
 
       {/* ── SEO FOOTER TEXT ── */}
       <div style={{ borderTop:"1px solid rgba(255,255,255,.05)", paddingTop:20, marginBottom:8 }}>
-        <p style={{ fontSize:11, color:"rgba(230,244,234,.2)", lineHeight:1.8, textAlign:"center", maxWidth:700, margin:"0 auto 10px" }}>
-          O <strong style={{ color:"rgba(230,244,234,.35)" }}>TennisLab</strong> é o comparador de equipamentos de tênis com curadoria do time especialista. Compare raquetes Wilson, Babolat, Head e Yonex. Encontre a melhor corda de tênis Luxilon, RPM Blast ou NXT. Tênis de court Asics Gel-Resolution, Nike Air Zoom Vapor e Adidas Barricade. Raqueteiras para todos os níveis.
+        <p style={{ fontSize:12, color:"rgba(230,244,234,.42)", lineHeight:1.8, textAlign:"center", maxWidth:700, margin:"0 auto 10px" }}>
+          O <strong style={{ color:"rgba(230,244,234,.35)" }}>TennisLab</strong> é o comparador de equipamentos de tênis com curadoria do time especialista. Compare raquetes Wilson, Babolat, Head e Yonex. Encontre a melhor corda de tênis Luxilon, RPM Blast ou NXT. Calçados Asics Gel-Resolution, Nike Air Zoom Vapor e Adidas Barricade. Raqueteiras para todos os níveis.
         </p>
-        <p style={{ textAlign:"center", fontSize:11, color:"rgba(230,244,234,.14)" }}>💼 Links de afiliados — Amazon, Netshoes, Centauro, Tennis Point. Ao comprar você apoia o TennisLab.</p>
+        <p style={{ textAlign:"center",fontSize:12,color:"rgba(230,244,234,.4)" }}>💼 Links de afiliados — Amazon, Netshoes, Centauro, Tennis Point. Ao comprar você apoia o TennisLab.</p>
       </div>
     </div>
   );
@@ -596,8 +627,8 @@ function SingleConfig({ onSelect }) {
             onMouseLeave={e=>{ e.currentTarget.style.borderColor="rgba(255,255,255,.07)"; e.currentTarget.style.transform=""; }}>
             <div style={{ fontSize:32, marginBottom:10 }}>{c.icon}</div>
             <div style={{ fontFamily:"'Anton',sans-serif", fontSize:16, letterSpacing:1, color:c.color, marginBottom:4 }}>{c.label}</div>
-            <div style={{ fontSize:11, color:"rgba(230,244,234,.34)" }}>{c.desc}</div>
-            <div style={{ marginTop:8, fontSize:10, color:"rgba(230,244,234,.22)" }}>{DB[c.id].length} modelos avaliados</div>
+            <div style={{ fontSize:12, color:"rgba(230,244,234,.55)" }}>{c.desc}</div>
+            <div style={{ marginTop:8, fontSize:12,color:"rgba(230,244,234,.55)" }}>{DB[c.id].length} modelos avaliados</div>
           </button>
         ))}
       </div>
@@ -624,7 +655,7 @@ function KitConfig({ kitStatus, setKitStatus, onStart, includedCount }) {
         {Object.entries(SC).map(([k,v])=>(
           <div key={k} style={{ display:"flex", alignItems:"center", gap:6, background:v.bg, border:`1px solid ${v.border}`, borderRadius:20, padding:"5px 12px" }}>
             <div style={{ width:7, height:7, borderRadius:"50%", background:v.pill }}/>
-            <span style={{ fontSize:11, fontWeight:600, color:"rgba(230,244,234,.65)" }}>{k==="include"?"✅ Incluir":k==="owned"?"📦 Já possuo":"❌ Não quero"}</span>
+            <span style={{ fontSize:13, fontWeight:600, color:"rgba(230,244,234,.75)" }}>{k==="include"?"✅ Incluir":k==="owned"?"📦 Já possuo":"❌ Não quero"}</span>
           </div>
         ))}
       </div>
@@ -640,18 +671,18 @@ function KitConfig({ kitStatus, setKitStatus, onStart, includedCount }) {
               </div>
               <div style={{ fontSize:32, marginBottom:9, marginTop:6 }}>{c.icon}</div>
               <div style={{ fontFamily:"'Anton',sans-serif", fontSize:15, letterSpacing:1, color:c.color, marginBottom:3 }}>{c.label}</div>
-              <div style={{ fontSize:10, color:"rgba(230,244,234,.35)" }}>{c.desc}</div>
-              <div style={{ marginTop:6, fontSize:10, color:"rgba(230,244,234,.22)" }}>{DB[c.id].length} produtos avaliados</div>
+              <div style={{ fontSize:12,color:"rgba(230,244,234,.55)" }}>{c.desc}</div>
+              <div style={{ marginTop:6, fontSize:12,color:"rgba(230,244,234,.55)" }}>{DB[c.id].length} produtos avaliados</div>
             </div>
           );
         })}
       </div>
       {/* Resumo */}
       <div style={{ background:"rgba(255,255,255,.022)", border:"1px solid rgba(255,255,255,.07)", borderRadius:10, padding:"14px 18px", marginBottom:22 }}>
-        <div style={{ fontSize:10, letterSpacing:1.5, color:"rgba(168,216,64,.5)", textTransform:"uppercase", marginBottom:10 }}>Resumo do kit</div>
+        <div style={{ fontSize:12, letterSpacing:1.2, color:"rgba(168,216,64,.8)", textTransform:"uppercase", marginBottom:10 }}>Resumo do kit</div>
         <div style={{ display:"flex", flexWrap:"wrap", gap:7 }}>
           {CATS.map(c=>{ const st=kitStatus[c.id]; const clr=st==="include"?"#a8d840":st==="owned"?"#40c8d8":"#ff6060"; const lbl=st==="include"?"incluindo":st==="owned"?"já tenho":"ignorando";
-            return <div key={c.id} style={{ display:"flex", alignItems:"center", gap:5, background:"rgba(255,255,255,.03)", border:"1px solid rgba(255,255,255,.06)", borderRadius:7, padding:"5px 10px" }}><span style={{ fontSize:13 }}>{c.icon}</span><span style={{ fontSize:12, fontWeight:600 }}>{c.label}</span><span style={{ fontSize:11, color:clr }}>· {lbl}</span></div>;
+            return <div key={c.id} style={{ display:"flex", alignItems:"center", gap:5, background:"rgba(255,255,255,.03)", border:"1px solid rgba(255,255,255,.06)", borderRadius:7, padding:"5px 10px" }}><span style={{ fontSize:13 }}>{c.icon}</span><span style={{ fontSize:13, fontWeight:600 }}>{c.label}</span><span style={{ fontSize:12, color:clr }}>· {lbl}</span></div>;
           })}
         </div>
       </div>
@@ -659,7 +690,7 @@ function KitConfig({ kitStatus, setKitStatus, onStart, includedCount }) {
         <button className="btn-green" onClick={onStart} disabled={includedCount===0} style={{ opacity:includedCount===0?.5:1 }}>
           {includedCount===0?"Selecione ao menos 1 item":`🎯 Analisar Kit (${includedCount} ${includedCount===1?"item":"itens"})`}
         </button>
-        <span style={{ fontSize:11, color:"rgba(230,244,234,.28)" }}>{includedCount} item(ns) serão analisados</span>
+        <span style={{ fontSize:13, color:"rgba(230,244,234,.55)" }}>{includedCount} item(ns) serão analisados</span>
       </div>
     </div>
   );
@@ -672,9 +703,9 @@ function QuizStep({ quizData, catObj, qIdx, onAnswer, onBack }) {
     <div style={{ maxWidth:560, margin:"0 auto", padding:"28px 16px" }} className="fade-in">
       <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:6 }}>
         <span style={{ fontSize:18 }}>{catObj?.icon}</span>
-        <span style={{ fontFamily:"'Anton',sans-serif", fontSize:11, letterSpacing:2, color:"rgba(168,216,64,.6)", textTransform:"uppercase" }}>{catObj?.label}</span>
+        <span style={{ fontFamily:"'Anton',sans-serif", fontSize:13, letterSpacing:1.5, color:"rgba(168,216,64,.85)", textTransform:"uppercase" }}>{catObj?.label}</span>
       </div>
-      <div style={{ fontFamily:"'Anton',sans-serif", fontSize:11, letterSpacing:1.5, color:"rgba(230,244,234,.25)", marginBottom:18 }}>PERGUNTA {qIdx+1} DE {quizData.length}</div>
+      <div style={{ fontFamily:"'Anton',sans-serif", fontSize:12, letterSpacing:1, color:"rgba(230,244,234,.5)", marginBottom:18 }}>PERGUNTA {qIdx+1} DE {quizData.length}</div>
       <div className="prog-track"><div className="prog-fill" style={{ width:`${((qIdx+1)/quizData.length)*100}%` }}/></div>
       <div style={{ fontSize:22, marginBottom:10 }}>{q.icon}</div>
       <h2 style={{ fontFamily:"'Anton',sans-serif", fontSize:"clamp(22px,5vw,38px)", letterSpacing:0, lineHeight:1.15, marginBottom:24 }}>{q.q}</h2>
@@ -704,11 +735,11 @@ function LoadingStep({ isKit }) {
 function ScoreBar({ label, value, max=5, color="#a8d840" }) {
   return (
     <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:5 }}>
-      <div style={{ fontSize:11, color:"rgba(230,244,234,.45)", width:68, flexShrink:0 }}>{label}</div>
+      <div style={{ fontSize:12, color:"rgba(230,244,234,.65)", width:72, flexShrink:0 }}>{label}</div>
       <div className="score-bar-track">
         <div className="score-bar-fill" style={{ width:`${(value/max)*100}%`, background:color }}/>
       </div>
-      <div style={{ fontSize:11, color:"rgba(230,244,234,.35)", width:16, textAlign:"right" }}>{value}</div>
+      <div style={{ fontSize:13, color:"rgba(230,244,234,.6)", width:16, textAlign:"right" }}>{value}</div>
     </div>
   );
 }
@@ -742,11 +773,11 @@ function ProdCard({ prod, rank, justificativa, catObj }) {
       <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start", marginBottom:14, flexWrap:"wrap", gap:8, rowGap:12 }}>
         <div>
           <span className="badge" style={{ background:badgeColors[rank].bg, color:badgeColors[rank].txt, marginBottom:8, display:"inline-block" }}>{labels[rank]}</span>
-          <div style={{ fontSize:11, color:"rgba(230,244,234,.38)", marginBottom:3 }}>{prod.marca}</div>
+          <div style={{ fontSize:13, color:"rgba(230,244,234,.6)", marginBottom:4 }}>{prod.marca}</div>
           <div style={{ fontFamily:"'Anton',sans-serif", fontSize:20, letterSpacing:1 }}>{prod.produto}</div>
         </div>
         <div style={{ textAlign:"right" }}>
-          <div style={{ fontSize:10, color:"rgba(230,244,234,.28)", textTransform:"uppercase", letterSpacing:1, marginBottom:3 }}>Faixa de preço</div>
+          <div style={{ fontSize:12, color:"rgba(230,244,234,.55)", textTransform:"uppercase", letterSpacing:1, marginBottom:3 }}>Faixa de preço</div>
           <div style={{ fontFamily:"'Anton',sans-serif", fontSize:18, color:catObj?.color||"#a8d840" }}>{prod.preco_brl}</div>
         </div>
       </div>
@@ -778,9 +809,9 @@ function ProdCard({ prod, rank, justificativa, catObj }) {
 
       {/* Lojas */}
       <div style={{ borderTop:"1px solid rgba(255,255,255,.05)", paddingTop:12, marginBottom:12 }}>
-        <div style={{ fontSize:10, color:"rgba(230,244,234,.22)", textTransform:"uppercase", letterSpacing:1, marginBottom:8 }}>🔍 Buscar melhor preço:</div>
+        <div style={{ fontSize:12, color:"rgba(230,244,234,.55)", textTransform:"uppercase", letterSpacing:1, marginBottom:8 }}>🔍 Buscar melhor preço:</div>
         <div style={{ display:"flex", flexWrap:"wrap", gap:7 }}>
-          {STORES(prod.busca).map(s=><a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" className="store-link" style={{ background:s.bg, border:`1px solid ${s.border}`, color:s.color }}>🔗 {s.name}</a>)}
+          {STORES(prod.busca, prod.links||{}).map(s=><a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" className="store-link" style={{ background:s.bg, border:`1px solid ${s.border}`, color:s.color }}>🔗 {s.name}</a>)}
         </div>
       </div>
 
@@ -788,7 +819,7 @@ function ProdCard({ prod, rank, justificativa, catObj }) {
       <div style={{ borderTop:"1px solid rgba(255,255,255,.05)", paddingTop:12 }}>
         {alertDone ? <div style={{ fontSize:12, color:"#a8d840" }}>✅ Alerta cadastrado!</div> : (
           <div className="alert-row">
-            <span style={{ fontSize:11, color:"rgba(230,244,234,.26)", flexShrink:0 }}>🔔 Alerta de preço:</span>
+            <span style={{ fontSize:13, color:"rgba(230,244,234,.55)", flexShrink:0 }}>🔔 Alerta de preço:</span>
             <input className="input-field" style={{ fontSize:13, padding:"9px 11px" }} type="email" placeholder="seu@email.com" value={alertEmail} onChange={e=>setAlertEmail(e.target.value)} onKeyDown={e=>e.key==="Enter"&&setAlertDone(true)}/>
             <button className="alert-btn" onClick={()=>alertEmail.includes("@")&&setAlertDone(true)}>Alertar</button>
           </div>
@@ -808,7 +839,7 @@ function SingleResults({ results, onReset, onReQuiz }) {
           <div style={{ fontFamily:"'Anton',sans-serif", fontSize:"clamp(22px,5vw,32px)", letterSpacing:2, marginBottom:6 }}>
             {catObj?.icon} MELHOR {catObj?.label.toUpperCase()} DE TÊNIS — <span style={{ color:"#a8d840" }}>COMPARAÇÃO 2025</span>
           </div>
-          {ai?.perfil && <div style={{ fontSize:13, color:"rgba(230,244,234,.5)" }}>{ai.perfil}</div>}
+          {ai?.perfil && <div style={{ fontSize:14, color:"rgba(230,244,234,.68)" }}>{ai.perfil}</div>}
         </div>
         <div style={{ display:"flex", gap:8, flexWrap:"wrap" }}>
           <span className="ai-badge">🏅 {DB[catObj?.id||"raquete"].length} modelos avaliados pelo time</span>
@@ -823,19 +854,19 @@ function SingleResults({ results, onReset, onReQuiz }) {
         <div style={{ display:"flex", gap:12, background:"rgba(168,216,64,.04)", border:"1px solid rgba(168,216,64,.1)", borderRadius:12, padding:"18px 20px", marginBottom:16 }}>
           <span style={{ fontSize:20, flexShrink:0 }}>💡</span>
           <div>
-            <div style={{ fontSize:10, letterSpacing:1.5, color:"rgba(168,216,64,.6)", textTransform:"uppercase", marginBottom:5 }}>Dica do Time Especialista</div>
-            <div style={{ fontSize:13, color:"rgba(230,244,234,.58)", lineHeight:1.65 }}>{ai.dica_tecnica}</div>
+            <div style={{ fontSize:13, letterSpacing:1.2, color:"rgba(168,216,64,.85)", textTransform:"uppercase", marginBottom:6 }}>Dica do Time Especialista</div>
+            <div style={{ fontSize:14, color:"rgba(230,244,234,.75)", lineHeight:1.7 }}>{ai.dica_tecnica}</div>
           </div>
         </div>
       )}
       {ai?.aviso && (
         <div style={{ display:"flex", gap:12, background:"rgba(240,200,64,.04)", border:"1px solid rgba(240,200,64,.15)", borderRadius:12, padding:"16px 20px", marginBottom:16 }}>
           <span style={{ fontSize:18, flexShrink:0 }}>⚠️</span>
-          <div style={{ fontSize:13, color:"rgba(240,200,64,.7)", lineHeight:1.65 }}>{ai.aviso}</div>
+          <div style={{ fontSize:14, color:"rgba(240,200,64,.85)", lineHeight:1.7 }}>{ai.aviso}</div>
         </div>
       )}
 
-      <div style={{ fontSize:11, color:"rgba(230,244,234,.16)", lineHeight:1.6, padding:"10px 14px", background:"rgba(255,255,255,.02)", borderRadius:8, marginBottom:20 }}>
+      <div style={{ fontSize:12, color:"rgba(230,244,234,.4)", lineHeight:1.6, padding:"10px 14px", background:"rgba(255,255,255,.02)", borderRadius:8, marginBottom:20 }}>
         💼 Links de afiliados — ao comprar você apoia o TennisLab. Substitua <strong style={{ color:"rgba(168,216,64,.3)" }}>SEUTAG-20</strong> pelo seu ID Amazon antes de publicar.
       </div>
       <div style={{ display:"flex", gap:10, flexWrap:"wrap" }}>
@@ -856,18 +887,18 @@ function KitResults({ results, onReset, onReQuiz }) {
       <div style={{ display:"flex", flexWrap:"wrap", gap:12, alignItems:"flex-start", marginBottom:24 }}>
         <div style={{ flex:1 }}>
           <h1 style={{ fontFamily:"'Anton',sans-serif", fontSize:"clamp(22px,5vw,32px)", letterSpacing:2, marginBottom:6, fontWeight:"normal" }}>SEU <span style={{ color:"#a8d840" }}>KIT DE TÊNIS PERSONALIZADO</span></h1>
-          {ai?.perfil && <div style={{ fontSize:13, color:"rgba(230,244,234,.5)" }}>{ai.perfil}</div>}
+          {ai?.perfil && <div style={{ fontSize:14, color:"rgba(230,244,234,.68)" }}>{ai.perfil}</div>}
         </div>
         <div style={{ textAlign:"right" }}>
-          <div style={{ fontSize:10, color:"rgba(230,244,234,.28)", textTransform:"uppercase", marginBottom:3 }}>Investimento estimado a partir de</div>
+          <div style={{ fontSize:12, color:"rgba(230,244,234,.55)", textTransform:"uppercase", marginBottom:4 }}>Investimento estimado a partir de</div>
           <div style={{ fontFamily:"'Anton',sans-serif", fontSize:20, color:"#a8d840" }}>R$ {totalMin.toLocaleString("pt-BR")}+</div>
         </div>
       </div>
 
       {ai?.sinergia && (
         <div className="sinergia-box">
-          <div style={{ fontSize:10, letterSpacing:1.5, color:"rgba(168,216,64,.65)", textTransform:"uppercase", marginBottom:7 }}>🔗 Análise do Time Especialista</div>
-          <div style={{ fontSize:13, color:"rgba(230,244,234,.62)", lineHeight:1.7 }}>{ai.sinergia}</div>
+          <div style={{ fontSize:13, letterSpacing:1.2, color:"rgba(168,216,64,.85)", textTransform:"uppercase", marginBottom:8 }}>🔗 Análise do Time Especialista</div>
+          <div style={{ fontSize:14, color:"rgba(230,244,234,.78)", lineHeight:1.75 }}>{ai.sinergia}</div>
           {ai?.tensao_recomendada && (
             <div style={{ marginTop:10, padding:"8px 14px", background:"rgba(168,216,64,.06)", borderRadius:8, fontSize:13, color:"rgba(168,216,64,.8)" }}>
               🎯 Tensão recomendada: <strong>{ai.tensao_recomendada}</strong>
@@ -886,12 +917,12 @@ function KitResults({ results, onReset, onReQuiz }) {
               <div style={{ display:"flex", alignItems:"center", gap:10, flexShrink:0 }}>
                 <div style={{ width:40, height:40, background:"rgba(255,255,255,.05)", borderRadius:10, display:"flex", alignItems:"center", justifyContent:"center", fontSize:18, border:`1px solid ${catObj.color}44` }}>{catObj.icon}</div>
                 <div>
-                  <div style={{ fontSize:10, letterSpacing:1, color:catObj.color, textTransform:"uppercase", marginBottom:2 }}>{catObj.label}</div>
-                  <div style={{ fontSize:10, color:"rgba(230,244,234,.28)" }}>{catObj.desc}</div>
+                  <div style={{ fontSize:12, letterSpacing:1, color:catObj.color, textTransform:"uppercase", marginBottom:3 }}>{catObj.label}</div>
+                  <div style={{ fontSize:12, color:"rgba(230,244,234,.55)" }}>{catObj.desc}</div>
                 </div>
               </div>
               <div style={{ flex:1, minWidth:120 }}>
-                <div style={{ fontSize:11, color:"rgba(230,244,234,.35)", marginBottom:2 }}>{prod.marca}</div>
+                <div style={{ fontSize:13, color:"rgba(230,244,234,.6)", marginBottom:3 }}>{prod.marca}</div>
                 <div style={{ fontFamily:"'Anton',sans-serif", fontSize:17, letterSpacing:1 }}>{prod.produto}</div>
               </div>
               <div style={{ textAlign:"right", flexShrink:0 }}>
@@ -899,7 +930,7 @@ function KitResults({ results, onReset, onReQuiz }) {
               </div>
             </div>
             {specs.length>0 && <div style={{ display:"flex", flexWrap:"wrap", gap:5, marginBottom:10 }}>{specs.map(s=><span key={s.k} className="spec-tag"><span style={{ color:"rgba(230,244,234,.3)" }}>{s.k}:</span>{String(s.v)}</span>)}</div>}
-            <div style={{ fontSize:13, color:"rgba(230,244,234,.55)", lineHeight:1.65, marginBottom:12, borderLeft:`2px solid ${catObj.color}33`, paddingLeft:10 }}>
+            <div style={{ fontSize:14, color:"rgba(230,244,234,.72)", lineHeight:1.7, marginBottom:14, borderLeft:`2px solid ${catObj.color}33`, paddingLeft:10 }}>
               {(ai && ai.justificativas && ai.justificativas[catObj.id]) || prod.descricao}
             </div>
             <div style={{ display:"flex", gap:7, flexWrap:"wrap", marginBottom:10 }}>
@@ -907,7 +938,7 @@ function KitResults({ results, onReset, onReQuiz }) {
               <a href={ytSearchEN(prod.busca)} target="_blank" rel="noopener noreferrer" className="yt-link">▶ Review EN</a>
             </div>
             <div style={{ display:"flex", flexWrap:"wrap", gap:7 }}>
-              {STORES(prod.busca).map(s=><a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" className="store-link" style={{ background:s.bg, border:`1px solid ${s.border}`, color:s.color }}>🔗 {s.name}</a>)}
+              {STORES(prod.busca, prod.links||{}).map(s=><a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" className="store-link" style={{ background:s.bg, border:`1px solid ${s.border}`, color:s.color }}>🔗 {s.name}</a>)}
             </div>
           </div>
         );
@@ -915,7 +946,7 @@ function KitResults({ results, onReset, onReQuiz }) {
 
       {ownedCats.length>0 && (
         <div style={{ background:"rgba(64,200,216,.04)", border:"1px solid rgba(64,200,216,.14)", borderRadius:12, padding:"14px 18px", marginBottom:14 }}>
-          <div style={{ fontSize:10, letterSpacing:1.5, color:"rgba(64,200,216,.6)", textTransform:"uppercase", marginBottom:8 }}>📦 Equipamentos que você já possui</div>
+          <div style={{ fontSize:13, letterSpacing:1.2, color:"rgba(64,200,216,.85)", textTransform:"uppercase", marginBottom:8 }}>📦 Equipamentos que você já possui</div>
           <div style={{ display:"flex", flexWrap:"wrap", gap:7 }}>{ownedCats.map(c=><span key={c.id} style={{ background:"rgba(64,200,216,.07)", border:"1px solid rgba(64,200,216,.18)", borderRadius:8, padding:"5px 12px", fontSize:13, display:"flex", alignItems:"center", gap:5 }}><span>{c.icon}</span><span style={{ fontWeight:600 }}>{c.label}</span></span>)}</div>
         </div>
       )}
@@ -924,19 +955,19 @@ function KitResults({ results, onReset, onReQuiz }) {
         <div style={{ display:"flex", gap:12, background:"rgba(168,216,64,.04)", border:"1px solid rgba(168,216,64,.1)", borderRadius:12, padding:"16px 20px", marginBottom:14 }}>
           <span style={{ fontSize:18, flexShrink:0 }}>🛠️</span>
           <div>
-            <div style={{ fontSize:10, letterSpacing:1.5, color:"rgba(168,216,64,.6)", textTransform:"uppercase", marginBottom:5 }}>Dica de Montagem</div>
-            <div style={{ fontSize:13, color:"rgba(230,244,234,.58)", lineHeight:1.65 }}>{ai.dica_montagem}</div>
+            <div style={{ fontSize:13, letterSpacing:1.2, color:"rgba(168,216,64,.85)", textTransform:"uppercase", marginBottom:6 }}>Dica de Montagem</div>
+            <div style={{ fontSize:14, color:"rgba(230,244,234,.75)", lineHeight:1.7 }}>{ai.dica_montagem}</div>
           </div>
         </div>
       )}
       {ai?.aviso && (
         <div style={{ display:"flex", gap:10, background:"rgba(240,200,64,.04)", border:"1px solid rgba(240,200,64,.14)", borderRadius:12, padding:"14px 18px", marginBottom:14 }}>
           <span style={{ fontSize:18, flexShrink:0 }}>⚠️</span>
-          <div style={{ fontSize:13, color:"rgba(240,200,64,.7)", lineHeight:1.65 }}>{ai.aviso}</div>
+          <div style={{ fontSize:14, color:"rgba(240,200,64,.85)", lineHeight:1.7 }}>{ai.aviso}</div>
         </div>
       )}
 
-      <div style={{ fontSize:11, color:"rgba(230,244,234,.16)", lineHeight:1.6, padding:"10px 14px", background:"rgba(255,255,255,.02)", borderRadius:8, marginBottom:20 }}>
+      <div style={{ fontSize:12, color:"rgba(230,244,234,.4)", lineHeight:1.6, padding:"10px 14px", background:"rgba(255,255,255,.02)", borderRadius:8, marginBottom:20 }}>
         💼 Links de afiliados. Substitua <strong style={{ color:"rgba(168,216,64,.3)" }}>SEUTAG-20</strong> pelo seu ID Amazon antes de publicar.
       </div>
       <div style={{ display:"flex", gap:10, flexWrap:"wrap" }}>
@@ -962,8 +993,8 @@ function PushBanner({ onDone }) {
       <span style={{ fontSize:15 }}>📲</span>
       <span style={{ fontSize:13, flex:1 }}>Receba alertas de promoções e ofertas de tênis!</span>
       <div style={{ display:"flex", gap:8, flexShrink:0 }}>
-        <button className="btn-green" style={{ padding:"8px 16px",fontSize:12,minHeight:38 }} onClick={req}>{st==="loading"?"...":"Ativar"}</button>
-        <button className="btn-ghost" style={{ padding:"8px 12px",fontSize:12,minHeight:38 }} onClick={onDone}>Agora não</button>
+        <button className="btn-green" style={{ padding:"9px 18px",fontSize:13,minHeight:40 }} onClick={req}>{st==="loading"?"...":"Ativar"}</button>
+        <button className="btn-ghost" style={{ padding:"9px 14px",fontSize:13,minHeight:40 }} onClick={onDone}>Agora não</button>
       </div>
     </div>
   );
@@ -978,19 +1009,19 @@ function EmailModal({ onClose, onSave }) {
       <div className="modal-box">
         <div style={{ fontSize:30,textAlign:"center",marginBottom:10 }}>📧</div>
         <div style={{ fontFamily:"'Anton',sans-serif",fontSize:21,letterSpacing:2,textAlign:"center",marginBottom:8 }}>SALVAR ANÁLISE</div>
-        <p style={{ fontSize:13,color:"rgba(230,244,234,.45)",textAlign:"center",lineHeight:1.65,marginBottom:20 }}>Receba sua análise técnica por e-mail e fique por dentro das melhores ofertas.</p>
+        <p style={{ fontSize:14,color:"rgba(230,244,234,.65)",textAlign:"center",lineHeight:1.7,marginBottom:20 }}>Receba sua análise técnica por e-mail e fique por dentro das melhores ofertas.</p>
         <div style={{ display:"flex",flexDirection:"column",gap:10,marginBottom:14 }}>
           <input className="input-field" placeholder="Seu nome (opcional)" value={nome} onChange={e=>setNome(e.target.value)}/>
           <input className="input-field" type="email" placeholder="seu@email.com *" value={email} onChange={e=>setEmail(e.target.value)} onKeyDown={e=>e.key==="Enter"&&save()}/>
         </div>
-        <label style={{ display:"flex",alignItems:"center",gap:10,cursor:"pointer",marginBottom:18,fontSize:13,color:"rgba(230,244,234,.45)" }}>
+        <label style={{ display:"flex",alignItems:"center",gap:10,cursor:"pointer",marginBottom:18,fontSize:14,color:"rgba(230,244,234,.65)" }}>
           <input type="checkbox" checked={weekly} onChange={e=>setWeekly(e.target.checked)} style={{ accentColor:"#a8d840",width:15,height:15 }}/> Newsletter semanal de ofertas
         </label>
         <div style={{ display:"flex",gap:10 }}>
           <button className="btn-green" style={{ flex:1 }} onClick={save} disabled={loading}>{loading?"Salvando...":"✅ Salvar"}</button>
           <button className="btn-ghost" onClick={onClose}>Não, obrigado</button>
         </div>
-        <div style={{ marginTop:12,fontSize:10,color:"rgba(230,244,234,.16)",textAlign:"center" }}>Sem spam · Cancelamento com 1 clique · Powered by Brevo</div>
+        <div style={{ marginTop:12,fontSize:12,color:"rgba(230,244,234,.4)",textAlign:"center" }}>Sem spam · Cancelamento com 1 clique · Powered by Brevo</div>
       </div>
     </div>
   );
@@ -1018,7 +1049,7 @@ function ChatWidget({ open, onToggle }) {
         <div className="chat-window">
           <div className="chat-header">
             <span style={{ fontSize:18 }}>🎾</span>
-            <div><div style={{ fontFamily:"'Anton',sans-serif",fontSize:13,letterSpacing:1.5,color:"#a8d840" }}>TIME TENNISLAB</div><div style={{ fontSize:10,color:"rgba(230,244,234,.32)" }}>Time Especialista TennisLab</div></div>
+            <div><div style={{ fontFamily:"'Anton',sans-serif",fontSize:13,letterSpacing:1.5,color:"#a8d840" }}>TIME TENNISLAB</div><div style={{ fontSize:12,color:"rgba(230,244,234,.5)" }}>Time Especialista TennisLab</div></div>
             <button onClick={onToggle} style={{ marginLeft:"auto",background:"none",border:"none",color:"rgba(230,244,234,.38)",cursor:"pointer",fontSize:16 }}>✕</button>
           </div>
           <div className="chat-messages">
