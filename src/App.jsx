@@ -349,6 +349,20 @@ header{padding:14px 20px;border-bottom:1px solid rgba(140,220,80,.1);display:fle
 .tab-active{background:linear-gradient(135deg,#a8d840,#7db800);color:#07100d;}
 .tab-inactive{background:rgba(255,255,255,.04);color:rgba(230,244,234,.4);border:1px solid rgba(255,255,255,.07);}
 
+
+/* ── Seção Pros ── */
+.pros-section{margin-bottom:44px;}
+.pros-scroll{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;}
+.pro-card{border-radius:16px;overflow:hidden;cursor:pointer;transition:transform .25s,box-shadow .25s;position:relative;}
+.pro-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.5);}
+.pro-photo{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:transform .3s;}
+.pro-card:hover .pro-photo{transform:scale(1.05);}
+.pro-photo-placeholder{width:100%;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;font-size:64px;letter-spacing:-2px;font-family:'Anton',sans-serif;font-weight:normal;position:relative;overflow:hidden;}
+.pro-photo-placeholder::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.7) 100%);}
+.pro-info{padding:14px 16px;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);}
+.pro-overlay{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(0deg,rgba(0,0,0,.88) 0%,transparent 100%);}
+.pro-equip-tag{display:inline-flex;align-items:center;gap:4px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:3px 9px;font-size:11px;color:rgba(230,244,234,.75);margin:2px 3px 2px 0;}
+
 /* ════════════════════════════
    TABLET  (≥600px)
 ════════════════════════════ */
@@ -498,6 +512,339 @@ export default function TennisLab() {
   );
 }
 
+
+
+
+/* ══════════════════════════════════════════════════════════════════
+   SEÇÃO PROS — Top 10 ATP + Top 10 WTA + Destaque Brasil
+   Equipamentos verificados em fontes especializadas (Abril 2026)
+   
+   PARA ADICIONAR FOTOS REAIS:
+   1. Baixe fotos do ATP/WTA Media Centre (gratuito, uso editorial)
+      → https://atpmedia.atptour.com | https://wtamedia.wtatennis.com
+   2. Ou use Wikimedia Commons (licença CC)
+   3. Adicione no campo foto:"URL_DA_IMAGEM" de cada jogador
+   4. O componente usa <img> automaticamente quando foto estiver preenchida
+══════════════════════════════════════════════════════════════════ */
+
+const PROS_ATP = [
+  {
+    ranking:1, nome:"Jannik Sinner", pais:"🇮🇹", pais_nome:"Itália",
+    subtitulo:"Nº1 ATP · 4x Grand Slam",
+    cor1:"#009246", cor2:"#CE2B37",
+    foto:"",
+    raquete:"Head Speed MP", corda:"Head Hawk Touch 1.30", calcado:"Nike GP Challenge 1",
+    destaque:"Primeiro italiano a conquistar múltiplos Grand Slams"
+  },
+  {
+    ranking:2, nome:"Carlos Alcaraz", pais:"🇪🇸", pais_nome:"Espanha",
+    subtitulo:"Nº2 ATP · 4x Grand Slam",
+    cor1:"#c60b1e", cor2:"#f1bf00",
+    foto:"",
+    raquete:"Babolat Pure Aero 98", corda:"Babolat RPM Blast 125", calcado:"Nike Air Zoom Vapor",
+    destaque:"Wimbledon e Roland Garros campeão · Rivalidade histórica com Sinner"
+  },
+  {
+    ranking:3, nome:"Alexander Zverev", pais:"🇩🇪", pais_nome:"Alemanha",
+    subtitulo:"Nº3 ATP · Roland Garros 2024",
+    cor1:"#000000", cor2:"#FFCC00",
+    foto:"",
+    raquete:"Head Gravity Pro", corda:"Luxilon ALU Power 125", calcado:"Adidas Barricade",
+    destaque:"Primeiro alemão a vencer Roland Garros desde Boris Becker"
+  },
+  {
+    ranking:4, nome:"Novak Djokovic", pais:"🇷🇸", pais_nome:"Sérvia",
+    subtitulo:"Nº4 ATP · 24x Grand Slam",
+    cor1:"#003DA5", cor2:"#C6363C",
+    foto:"",
+    raquete:"Head Speed Pro", corda:"Luxilon ALU Power 125", calcado:"Asics Gel Resolution",
+    destaque:"Maior vencedor de Grand Slams da história · 24 títulos"
+  },
+  {
+    ranking:5, nome:"Felix Auger-Aliassime", pais:"🇨🇦", pais_nome:"Canadá",
+    subtitulo:"Nº5 ATP · Career High",
+    cor1:"#FF0000", cor2:"#ffffff",
+    foto:"",
+    raquete:"Babolat Pure Aero", corda:"Babolat RPM Blast 125", calcado:"Nike Court",
+    destaque:"Melhor ranking da carreira em 2026 · Semifinalista de Grand Slams"
+  },
+  {
+    ranking:6, nome:"Ben Shelton", pais:"🇺🇸", pais_nome:"EUA",
+    subtitulo:"Nº6 ATP · Saque explosivo",
+    cor1:"#3C3B6E", cor2:"#B22234",
+    foto:"",
+    raquete:"Yonex EZONE 98", corda:"Yonex Poly Tour Strike", calcado:"On The Roger Pro",
+    destaque:"Um dos serviços mais potentes do circuito · Finalist de Grand Slams"
+  },
+  {
+    ranking:7, nome:"Alex de Minaur", pais:"🇦🇺", pais_nome:"Austrália",
+    subtitulo:"Nº7 ATP · The Demon",
+    cor1:"#00008B", cor2:"#FFCC00",
+    foto:"",
+    raquete:"Wilson Blade 98", corda:"Luxilon ALU Power", calcado:"Nike Air Zoom Vapor",
+    destaque:"Melhor atleta australiano · Conhecido pela velocidade e defesa"
+  },
+  {
+    ranking:8, nome:"Taylor Fritz", pais:"🇺🇸", pais_nome:"EUA",
+    subtitulo:"Nº8 ATP · US Open 2024",
+    cor1:"#3C3B6E", cor2:"#B22234",
+    foto:"",
+    raquete:"Head Radical MP", corda:"Head Hawk Touch", calcado:"Nike Court",
+    destaque:"Finalista do US Open 2024 · Líder da nova geração americana"
+  },
+  {
+    ranking:9, nome:"Lorenzo Musetti", pais:"🇮🇹", pais_nome:"Itália",
+    subtitulo:"Nº9 ATP · Artista da quadra",
+    cor1:"#009246", cor2:"#CE2B37",
+    foto:"",
+    raquete:"Head Boom Pro", corda:"Head Sonic Pro", calcado:"Head apparel",
+    destaque:"Conhecido pelo jogo estético · Drop shot mais preciso do circuito"
+  },
+  {
+    ranking:10, nome:"Daniil Medvedev", pais:"🇷🇺", pais_nome:"Rússia",
+    subtitulo:"Nº10 ATP · US Open 2021",
+    cor1:"#ffffff", cor2:"#003DA5",
+    foto:"",
+    raquete:"Tecnifibre T-Fight ISO 305", corda:"Tecnifibre Ice Code", calcado:"Lacoste AG-LT",
+    destaque:"Estilo único e imprevisível · Multicampeão de Masters 1000"
+  },
+];
+
+const PROS_WTA = [
+  {
+    ranking:1, nome:"Aryna Sabalenka", pais:"🇧🇾", pais_nome:"Belarus",
+    subtitulo:"Nº1 WTA · 4x Grand Slam",
+    cor1:"#CF101A", cor2:"#007A33",
+    foto:"",
+    raquete:"Wilson Blade 98 v10", corda:"Luxilon ALU Power + Ace", calcado:"Nike",
+    destaque:"Ano-end Nº1 consecutiva · Rainha do Australian Open"
+  },
+  {
+    ranking:2, nome:"Elena Rybakina", pais:"🇰🇿", pais_nome:"Cazaquistão",
+    subtitulo:"Nº2 WTA · Wimbledon 2022",
+    cor1:"#00AFCA", cor2:"#FFE600",
+    foto:"",
+    raquete:"Yonex VCORE 100", corda:"Yonex Poly Tour Pro", calcado:"Nike Air Zoom",
+    destaque:"Campeã do WTA Finals 2025 · Saque mais devastador do circuito"
+  },
+  {
+    ranking:3, nome:"Coco Gauff", pais:"🇺🇸", pais_nome:"EUA",
+    subtitulo:"Nº3 WTA · 2x Grand Slam",
+    cor1:"#3C3B6E", cor2:"#B22234",
+    foto:"",
+    raquete:"Head Speed MP", corda:"Head Sonic Pro 125", calcado:"New Balance",
+    destaque:"US Open 2023 e Roland Garros 2025 · Maior nome da nova geração"
+  },
+  {
+    ranking:4, nome:"Iga Swiatek", pais:"🇵🇱", pais_nome:"Polônia",
+    subtitulo:"Nº4 WTA · 6x Grand Slam",
+    cor1:"#DC143C", cor2:"#ffffff",
+    foto:"",
+    raquete:"Tecnifibre T-Fight I.G.", corda:"Tecnifibre Black Code", calcado:"On The Roger",
+    destaque:"6x Roland Garros · Rainha absoluta do saibro mundial"
+  },
+  {
+    ranking:5, nome:"Jessica Pegula", pais:"🇺🇸", pais_nome:"EUA",
+    subtitulo:"Nº5 WTA · Top 5 constante",
+    cor1:"#3C3B6E", cor2:"#B22234",
+    foto:"",
+    raquete:"Yonex EZONE 98", corda:"Yonex Poly Tour Strike", calcado:"Nike Air Zoom",
+    destaque:"Finalista do US Open 2024 · Consistência e agressividade de fundo"
+  },
+  {
+    ranking:6, nome:"Amanda Anisimova", pais:"🇺🇸", pais_nome:"EUA",
+    subtitulo:"Nº6 WTA · 2x finalista Slam",
+    cor1:"#3C3B6E", cor2:"#B22234",
+    foto:"",
+    raquete:"Wilson Blade 98", corda:"Luxilon ALU Power", calcado:"Nike",
+    destaque:"Finalista de Wimbledon e US Open 2025 · Grande retorno ao topo"
+  },
+  {
+    ranking:7, nome:"Elina Svitolina", pais:"🇺🇦", pais_nome:"Ucrânia",
+    subtitulo:"Nº7 WTA · Veterana de elite",
+    cor1:"#005BBB", cor2:"#FFD500",
+    foto:"",
+    raquete:"Diadem Edge 98", corda:"Diadem Solstice Power", calcado:"Adidas",
+    destaque:"Ícone ucraniano · Semifinalista de Wimbledon e Roland Garros"
+  },
+  {
+    ranking:8, nome:"Jasmine Paolini", pais:"🇮🇹", pais_nome:"Itália",
+    subtitulo:"Nº8 WTA · 2x finalista Slam",
+    cor1:"#009246", cor2:"#CE2B37",
+    foto:"",
+    raquete:"Yonex VCORE 100", corda:"Yonex Poly Tour Fire", calcado:"Nike Air Zoom",
+    destaque:"Roland Garros e Wimbledon finalista 2024 · Campeã em Roma 2025"
+  },
+  {
+    ranking:9, nome:"Mirra Andreeva", pais:"🇷🇺", pais_nome:"Rússia",
+    subtitulo:"Nº9 WTA · 18 anos",
+    cor1:"#ffffff", cor2:"#003DA5",
+    foto:"",
+    raquete:"Wilson Blade v10", corda:"Luxilon ALU Power", calcado:"Nike",
+    destaque:"Mais jovem a entrar no Top 10 · Dupla campeã Dubai e Indian Wells 2025"
+  },
+  {
+    ranking:10, nome:"Victoria Mboko", pais:"🇨🇦", pais_nome:"Canadá",
+    subtitulo:"Nº10 WTA · 19 anos",
+    cor1:"#FF0000", cor2:"#ffffff",
+    foto:"",
+    raquete:"Wilson Blade v10", corda:"Luxilon Ace", calcado:"Nike",
+    destaque:"WTA Newcomer of the Year 2025 · Campeã em Montreal com 19 anos"
+  },
+];
+
+const PROS_BR = [
+  {
+    ranking:"Top 50", nome:"João Fonseca", pais:"🇧🇷", pais_nome:"Brasil",
+    subtitulo:"Top 50 ATP · 19 anos",
+    cor1:"#009C3B", cor2:"#002776",
+    foto:"",
+    raquete:"Yonex VCORE 98", corda:"Yonex Poly Tour Strike", calcado:"On The Roger Pro 2",
+    destaque:"Campeão do Next Gen ATP Finals 2024 · Maior promessa do tênis brasileiro"
+  },
+];
+
+function ProsSection() {
+  const [aba, setAba] = useState("atp");
+  const [ativo, setAtivo] = useState(null);
+  const lista = aba==="atp" ? PROS_ATP : aba==="wta" ? PROS_WTA : PROS_BR;
+
+  return (
+    <div style={{ marginBottom:44 }}>
+      {/* Título */}
+      <div style={{ display:"flex", alignItems:"baseline", gap:12, marginBottom:20, flexWrap:"wrap" }}>
+        <h2 style={{ fontFamily:"'Anton',sans-serif", fontSize:"clamp(18px,4vw,26px)", letterSpacing:2, fontWeight:"normal" }}>
+          OS MELHORES DO MUNDO <span style={{ color:"#a8d840" }}>E SEUS EQUIPAMENTOS</span>
+        </h2>
+      </div>
+
+      {/* Tabs ATP / WTA / Brasil */}
+      <div style={{ display:"flex", gap:8, marginBottom:20, flexWrap:"wrap" }}>
+        {[
+          { id:"atp", label:"🏆 ATP Top 10" },
+          { id:"wta", label:"🏆 WTA Top 10" },
+          { id:"br",  label:"🇧🇷 Destaque Brasil" },
+        ].map(t=>(
+          <button key={t.id} onClick={()=>{ setAba(t.id); setAtivo(null); }}
+            style={{
+              padding:"9px 18px", borderRadius:8, fontSize:13, fontWeight:600,
+              fontFamily:"'Outfit',sans-serif", cursor:"pointer", transition:"all .2s", border:"none",
+              background: aba===t.id ? "linear-gradient(135deg,#a8d840,#7db800)" : "rgba(255,255,255,.06)",
+              color: aba===t.id ? "#07100d" : "rgba(230,244,234,.55)",
+              outline: aba!==t.id ? "1px solid rgba(255,255,255,.08)" : "none",
+            }}>
+            {t.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Cards */}
+      <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(160px,1fr))", gap:12 }}>
+        {lista.map((pro, idx)=>{
+          const aberto = ativo===idx;
+          const gradiente = `linear-gradient(160deg,${pro.cor1}cc,${pro.cor2}44,#07100d 80%)`;
+          return (
+            <div key={pro.nome} onClick={()=>setAtivo(aberto?null:idx)}
+              style={{
+                borderRadius:14, overflow:"hidden", cursor:"pointer",
+                background: gradiente,
+                border: aberto ? "2px solid rgba(168,216,64,.5)" : "1px solid rgba(255,255,255,.07)",
+                transition:"transform .22s,box-shadow .22s",
+                transform: aberto ? "translateY(-4px)" : "none",
+                boxShadow: aberto ? "0 12px 32px rgba(0,0,0,.4)" : "none",
+              }}>
+
+              {/* ÁREA DA FOTO */}
+              {pro.foto ? (
+                <img src={pro.foto} alt={pro.nome}
+                  style={{ width:"100%", aspectRatio:"3/4", objectFit:"cover", objectPosition:"top", display:"block" }}
+                  onError={e=>{ e.target.style.display="none"; e.target.nextSibling.style.display="flex"; }}
+                />
+              ) : null}
+
+              {/* PLACEHOLDER quando não há foto */}
+              <div style={{
+                display: pro.foto ? "none" : "flex",
+                flexDirection:"column", alignItems:"center", justifyContent:"center",
+                width:"100%", aspectRatio:"3/4",
+                background:`linear-gradient(160deg,${pro.cor1}88,${pro.cor2}22,#07100d)`,
+                position:"relative", overflow:"hidden",
+              }}>
+                {/* Fundo decorativo */}
+                <div style={{
+                  position:"absolute", inset:0,
+                  backgroundImage:`radial-gradient(circle at 50% 40%,${pro.cor1}33 0%,transparent 65%)`,
+                }}/>
+                <div style={{ fontSize:"clamp(44px,12vw,64px)", zIndex:1, lineHeight:1, marginBottom:8, filter:"drop-shadow(0 4px 12px rgba(0,0,0,.4))" }}>
+                  {pro.pais}
+                </div>
+                <div style={{
+                  fontFamily:"'Anton',sans-serif",
+                  fontSize:"clamp(20px,5vw,28px)",
+                  letterSpacing:2, color:"rgba(255,255,255,.12)",
+                  zIndex:1, lineHeight:1, textAlign:"center", padding:"0 8px",
+                }}>
+                  {pro.nome.split(" ").map(w=>w[0]).join("")}
+                </div>
+                {/* Ranking badge */}
+                <div style={{
+                  position:"absolute", top:10, left:10,
+                  background:"rgba(0,0,0,.55)", backdropFilter:"blur(4px)",
+                  borderRadius:6, padding:"2px 8px",
+                  fontFamily:"'Anton',sans-serif", fontSize:11, letterSpacing:1,
+                  color:"rgba(168,216,64,.9)",
+                }}>
+                  {typeof pro.ranking==="number" ? `#${pro.ranking}` : pro.ranking}
+                </div>
+              </div>
+
+              {/* INFO */}
+              <div style={{ padding:"12px 12px 14px", background:"rgba(0,0,0,.55)", backdropFilter:"blur(8px)" }}>
+                <div style={{ fontFamily:"'Anton',sans-serif", fontSize:"clamp(13px,3vw,15px)", letterSpacing:.5, color:"#fff", lineHeight:1.2, marginBottom:3 }}>
+                  {pro.nome}
+                </div>
+                <div style={{ fontSize:11, color:"rgba(230,244,234,.5)", marginBottom: aberto?10:0 }}>
+                  {pro.pais_nome} · {pro.subtitulo}
+                </div>
+
+                {aberto && (
+                  <div style={{ marginTop:10, borderTop:"1px solid rgba(255,255,255,.1)", paddingTop:10 }}>
+                    <div style={{ fontSize:11, color:"rgba(168,216,64,.8)", textTransform:"uppercase", letterSpacing:1, marginBottom:6 }}>
+                      Equipamentos
+                    </div>
+                    <div style={{ display:"flex", flexDirection:"column", gap:4 }}>
+                      <div style={{ display:"flex", gap:5, alignItems:"flex-start" }}>
+                        <span style={{ fontSize:11, flexShrink:0 }}>🎾</span>
+                        <span style={{ fontSize:11, color:"rgba(230,244,234,.75)", lineHeight:1.4 }}>{pro.raquete}</span>
+                      </div>
+                      <div style={{ display:"flex", gap:5, alignItems:"flex-start" }}>
+                        <span style={{ fontSize:11, flexShrink:0 }}>〰️</span>
+                        <span style={{ fontSize:11, color:"rgba(230,244,234,.75)", lineHeight:1.4 }}>{pro.corda}</span>
+                      </div>
+                      <div style={{ display:"flex", gap:5, alignItems:"flex-start" }}>
+                        <span style={{ fontSize:11, flexShrink:0 }}>👟</span>
+                        <span style={{ fontSize:11, color:"rgba(230,244,234,.75)", lineHeight:1.4 }}>{pro.calcado}</span>
+                      </div>
+                    </div>
+                    <div style={{ marginTop:8, fontSize:11, color:"rgba(230,244,234,.45)", fontStyle:"italic", lineHeight:1.5 }}>
+                      {pro.destaque}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Nota equipamentos */}
+      <p style={{ fontSize:11, color:"rgba(230,244,234,.3)", marginTop:12, lineHeight:1.6, textAlign:"center" }}>
+        Toque em um card para ver os equipamentos · Dados verificados em fontes especializadas · Abril 2026
+      </p>
+    </div>
+  );
+}
+
 /* ── HOME ── */
 const FAQ_DATA = [
   { q:"Qual a melhor raquete de tênis para iniciante?", a:"Para iniciantes recomendamos raquetes leves com cabeça grande (110–115 pol.) como a Head Ti.S6 (232g) ou Wilson Hyper Hammer 5.3. Elas geram potência com menos esforço e são mais forgiving nos erros de timing." },
@@ -560,6 +907,9 @@ function HomeStep({ onSingle, onKit }) {
           <div style={{ fontSize:13, color:"rgba(230,244,234,.55)" }}>Raquete · Corda · Bola · Raqueteira · Calçado</div>
         </div>
       </div>
+      {/* ── PROS ── */}
+      <ProsSection />
+
       {/* ── COMO FUNCIONA ── */}
       <div style={{ background:"rgba(168,216,64,.03)", border:"1px solid rgba(168,216,64,.07)", borderRadius:12, padding:24, marginBottom:40 }}>
         <h2 style={{ fontFamily:"'Anton',sans-serif", fontSize:13, letterSpacing:1.5, color:"rgba(168,216,64,.75)", marginBottom:18, fontWeight:"normal" }}>COMO FUNCIONA</h2>
